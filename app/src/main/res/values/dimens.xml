@@ -1,0 +1,21 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin_twice">32dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="layout_padding">6dp</dimen>
+    <dimen name="toolbar_spinner_height">42dp</dimen>
+    <dimen name="faction_image_size">56dp</dimen>
+    <dimen name="faction_name_size">16sp</dimen>
+    <dimen name="faction_description_size">12sp</dimen>
+    <dimen name="shortlist_mark_margin">3dp</dimen>
+    <dimen name="shortlist_mark_size">24dp</dimen>
+    <dimen name="card_corner_radius">12dp</dimen>
+    <dimen name="radio_button_margin">16dp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="text_large_size">32sp</dimen>
+    <dimen name="viewer_margin">16dp</dimen>
+    <dimen name="counter_min_width">24dp</dimen>
+    <dimen name="release_notes_margin">16dp</dimen>
+</resources>

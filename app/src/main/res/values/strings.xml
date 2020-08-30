@@ -1,0 +1,325 @@
+<resources>
+    <string name="app_name">IA Builder</string>
+
+    <!-- Card systems -->
+    <string name="card_system_ffg">FFG</string>
+    <string name="card_system_iacp">IACP Season 4</string>
+
+    <!-- Content Descriptions -->
+    <string name="faction">faction</string>
+    <string name="qrcode">QR code</string>
+    <string name="card_system">card system</string>
+    <string name="shortlist">shortlist</string>
+    <string name="filter">Filter</string>
+    <string name="order">Order</string>
+
+    <string-array name="traits">
+        <item>Any</item>
+        <item>Brawler</item>
+        <item>Creature</item>
+        <item>Droid</item>
+        <item>Force User</item>
+        <item>Guardian</item>
+        <item>Heavy Weapon</item>
+        <item>Hunter</item>
+        <item>Leader</item>
+        <item>Smuggler</item>
+        <item>Spy</item>
+        <item>Trooper</item>
+        <item>Vehicle</item>
+        <item>Wookiee</item>
+        <item>Skirmish Upgrade</item>
+        <item>Squad Upgrade</item>
+    </string-array>
+
+    <string-array name="restrictions">
+        <item>None</item>
+        <item>Any Figure</item>
+        <item>Brawler</item>
+        <item>Creature</item>
+        <item>Droid</item>
+        <item>Force User</item>
+        <item>Guardian</item>
+        <item>Heavy Weapon</item>
+        <item>Hunter</item>
+        <item>Leader</item>
+        <item>Smuggler</item>
+        <item>Spy</item>
+        <item>Trooper</item>
+        <item>Vehicle</item>
+        <item>Wookiee</item>
+        <item>Unique</item>
+        <item>Small</item>
+        <item>Large</item>
+        <item>Massive</item>
+        <item>Rebel</item>
+        <item>Imperial</item>
+        <item>Mercenary</item>
+    </string-array>
+
+    <string-array name="orders">
+        <item>Cost</item>
+        <item>Name</item>
+    </string-array>
+
+    <!-- Dialogs -->
+    <string name="dialog_army_create_title">Create</string>
+    <string name="dialog_army_create_message">Enter the army name:</string>
+    <string name="dialog_army_create_card_system">Choose the card system:</string>
+    <string name="dialog_army_import_title">Import</string>
+    <string name="dialog_army_edit_title">Rename</string>
+    <string name="dialog_army_edit_message">Edit the army name:</string>
+    <string name="dialog_army_name_hint">Insert the army name here</string>
+    <string name="dialog_army_delete_title">Delete</string>
+    <string name="dialog_army_delete_message">Are you sure do you want to delete this army?</string>
+    <string name="dialog_card_removal_title">Remove</string>
+    <string name="dialog_card_removal_message">Are you sure do you want to remove this card? It may also remove other cards from the army.</string>
+    <string name="dialog_results_victories">Victories</string>
+    <string name="dialog_results_defeats">Defeats</string>
+    <string name="dialog_results_title">Results</string>
+
+    <!-- Menus -->
+    <string name="action_show">Show invalid cards</string>
+    <string name="action_hide">Hide invalid cards</string>
+    <string name="action_import_link">Import link</string>
+    <string name="action_import_file">Import file</string>
+    <string name="action_share_link">Share link</string>
+    <string name="action_share_file">Share file</string>
+    <string name="action_share_image">Share image</string>
+    <string name="action_qrcode">Show QR code</string>
+    <string name="action_clone">Clone</string>
+    <string name="action_rename">Rename</string>
+    <string name="action_results">Results</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Snackbars -->
+    <string name="main_update_available">\"Version \"%1$s\" is now available!\"</string>
+    <string name="chooser_card_added">Card \"%1$s\" added.</string>
+    <string name="chooser_card_removed">Card \"%1$s\" removed.</string>
+    <string name="cards_selected">%1$d %2$s selected</string>
+    <string name="points_left">%1$d %2$s left</string>
+    <string name="card">card</string>
+    <string name="cards">cards</string>
+    <string name="point">point</string>
+    <string name="points">points</string>
+    <string name="undo">Undo</string>
+    <string name="download">Download</string>
+
+    <!-- Error messages -->
+    <string name="error_image_conversion">Error converting the army into an image</string>
+    <string name="error_file_conversion">Error converting the army into a file</string>
+    <string name="error_invalid_name">Invalid army name</string>
+    <string name="error_removal_canceled">Card removal canceled</string>
+    <string name="error_creation_canceled">Army creation canceled</string>
+    <string name="error_renaming_canceled">Army renaming canceled</string>
+    <string name="error_deletion_canceled">Army deletion canceled</string>
+    <string name="error_invalid_value">Enter a number between %1$d and %2$d</string>
+    <string name="error_invalid_link">Invalid Tabletop Admiral link</string>
+    <string name="error_invalid_file">Invalid Vassal deck file</string>
+
+    <!-- Misc -->
+    <string name="scan_qr_code">Scan this QR code with your camera to open the list in your phone.</string>
+
+    <!-- Preferences -->
+    <string name="activity_settings_title">Settings</string>
+    <string name="preference_category_deck">Deck</string>
+    <string name="preference_category_card_browser">Card Browser</string>
+    <string name="preference_title_columns_portrait">Number of columns in portrait mode</string>
+    <string name="preference_title_columns_landscape">Number of columns in landscape mode</string>
+    <string name="preference_summary_columns">Current value: %1$d</string>
+    <string name="preference_title_image_scaling">Card image scaling</string>
+    <string name="preference_summary_image_scaling">Current value: %1$d</string>
+
+    <!-- Release Notes -->
+    <string name="dialog_release_notes_title">Release Notes</string>
+    <string name="dialog_release_notes_version_1">
+        Version 1.0.0\n
+        - Public beta
+    </string>
+    <string name="dialog_release_notes_version_2">
+        Version 1.0.1\n
+        - Public release
+    </string>
+    <string name="dialog_release_notes_version_3">
+        Version 1.0.2\n
+        - Filtering of invalid Skirmish Upgrades in card chooser screen\n
+        - Added form cards and companion cards in card viewer screen\n
+        - New images for errata cards\n
+        - Fixed Victories/Defeats dialog
+    </string>
+    <string name="dialog_release_notes_version_4">
+        Version 1.0.3\n
+        - Added content for IACP Season 3\n
+        - Added version availability check\n
+        - Side effects of card removal are now reverted clicking on "undo"\n
+        - Fixed minor bugs
+    </string>
+    <string name="dialog_release_notes_version_5">
+        Version 1.0.4\n
+        - Fixed bugs related to Imperial Temporary Alliance\n
+        - Fixed bugs related to Yoda, Jedi Master
+    </string>
+    <string name="dialog_release_notes_version_6">
+        Version 1.0.5\n
+        - Fixed filtering of command cards for Force Users
+    </string>
+    <string name="dialog_release_notes_version_7">
+        Version 1.0.6\n
+        - Fixed Command Card filtering when the army contains 4-LOM\n
+        - Added Relese Notes dialog shown after version upgrade
+    </string>
+    <string name="dialog_release_notes_version_8">
+        Version 1.0.7\n
+        - Added file dump for uncaught exceptions\n
+        - Fixed crash loading an IACP army with "Cohesive Fireteam"
+    </string>
+    <string name="dialog_release_notes_version_9">
+        Version 1.0.8\n
+        - Fixed bug in card chooser screen that sometimes ignored clicks on cards\n
+        - Fixed bug with Imperial Retrofitting not showing up after adding SC2-M Repulsor Tank or AT-ST to the army\n
+        - Replaced IACP Season 1 and Season 2 approved cards with their newer and more readable version
+    </string>
+    <string name="dialog_release_notes_version_10">
+        Version 1.0.9\n
+        - Added ability to load an army from a Vassal deck file\n
+        - Added ability to share a Vassal deck file\n
+        - Fixed IACP elite cards not marked as elite\n
+        - Minor changes
+    </string>
+    <string name="dialog_release_notes_version_11">
+        Version 1.0.10\n
+        - Update for IACP v3.1
+    </string>
+    <string name="dialog_release_notes_version_12">
+        Version 1.0.11\n
+        - Long click on a card in card chooser screen now marks the card as shortlisted\n
+        - Shortlisted cards are always visible and listed before all the others\n
+        - Added menu item for sharing a deck as an image\n
+        - Minor fixes
+    </string>
+    <string name="dialog_release_notes_version_13">
+        Version 1.0.12\n
+        - Fixed issues loading an army saved with a very old version of the app\n
+        - Fixed issue that prevented the main screen to update army name and description after changes
+    </string>
+    <string name="dialog_release_notes_version_14">
+        Version 1.0.13\n
+        - Fixed issues when Driven by Hatred was added to the army\n
+        - Fixed crashes at startup when loading armies
+    </string>
+    <string name="dialog_release_notes_version_15">
+        Version 1.0.14\n
+        - Fixed crashes with companion and form cards in card viewer
+    </string>
+    <string name="dialog_release_notes_version_16">
+        Version 1.0.15\n
+        - Removed dialog asking for name when a new army is imported from link or loaded from file
+    </string>
+    <string name="dialog_release_notes_version_17">
+        Version 1.0.16\n
+        - Update for IACP v3.2
+    </string>
+    <string name="dialog_release_notes_version_18">
+        Version 1.0.17\n
+        - Fixed deployment cost of Yoda (IACP v3.2)
+    </string>
+    <string name="dialog_release_notes_version_19">
+        Version 1.0.18\n
+        - Fixed cost of Findsman Meditation (IACP v3.2)\n
+        - Fixed TabletopAdmiral mapping for Iron Will (IACP v3.2)
+    </string>
+    <string name="dialog_release_notes_version_20">
+        Version 1.0.19\n
+        - Command cards for Spy trait are not filtered out when Cross-Training is added to the army
+    </string>
+    <string name="dialog_release_notes_version_21">
+        Version 1.0.20\n
+        - Fixed issues exporting Chopper to Vassal\n
+        - Added missing updates for IACP v3.2 cards exported to Vassal
+    </string>
+    <string name="dialog_release_notes_version_22">
+        Version 1.0.21\n
+        - Fixed Cavalry Charge not showing up in card browser\n
+        - Adding a group with companion now enables command cards for that companion\n
+        - Fixed crash at startup if an army had Cohesive Fireteam card
+    </string>
+    <string name="dialog_release_notes_version_23">
+        Version 1.0.22\n
+        - Added IACP Season 4 spoilers: Loku Kanoloa, Lando Calrissian, General Sorin, E-Web Engineer, Overwatch, Bossk, Trandoshan Hunter, The Mandalorian, IG-11, Whistling Birds and Guild Programming
+    </string>
+    <string name="dialog_release_notes_version_24">
+        Version 1.0.23\n
+        - Added IACP Season 4 spoilers: Clan of Two and The Child
+    </string>
+    <string name="dialog_release_notes_version_25">
+        Version 1.0.24\n
+        - Fixed evaluation of traits and restrictions for Temporary Alliance, Saska Teft and Elite Jawa\n
+        - Handling of Squad Upgrade trait/keyword\n
+        - Added IACP Season 4 spoilers: Shoretrooper and Mortar Trooper
+    </string>
+    <string name="dialog_release_notes_version_26">
+        Version 1.0.25\n
+        - Added ability to filter deployment cards by traits\n
+        - Added ability to filter command cards by restrictions
+    </string>
+    <string name="dialog_release_notes_version_27">
+        Version 1.0.26\n
+        - Added IACP Season 4 spoilers: Loku Kanoloa, Jyn Erso, AT-RT, Elite Rebel Saboteur, General Sorin, Director Krennic, The Darksaber, Build on Hope, Deploy the Garrison!
+    </string>
+    <string name="dialog_release_notes_version_28">
+        Version 1.0.27\n
+        - Share image menu option now shares images with a meaningful file name\n
+        - Updated all IACP cards for old seasons with their IACP Approved image version\n
+        - Imperial command cards are now shown if Maul and The Darksaber are both into the deployment deck\n
+        - Added IACP Season 4 spoilers: Agent Blaise, ISB Infiltrator, Rebel Pathfinder, Verena Talos
+    </string>
+    <string name="dialog_release_notes_version_29">
+        Version 1.0.28\n
+        - Fixed Elite Royal Guard and Knowledge and Defense to match their IACP Season 4 version\n
+        - Updated IACP Season 4 spoilers to their fixed version: Built on Hope, Elite Rebel Pathfinder, Elite Mortar Trooper, Director Krennic
+    </string>
+    <string name="dialog_release_notes_version_30">
+        Version 1.0.29\n
+        - Fixed Elite Rebel Saboteur in IACP lists appearing both in their FFG and IACP version
+    </string>
+    <string name="dialog_release_notes_version_31">
+        Version 1.0.30\n
+        - Fixed share and import of Tabletop Admiral links containing IACP Season 4 cards\n
+        - Fixed bug that prevented Yoda to be included in Mercenary armies with Temporary Alliance\n
+        - Army description now has a more compact and descriptive format\n
+        - Importing an army from a Tabletop Admiral link now assigns a better default name
+    </string>
+    <string name="dialog_release_notes_version_32">
+        Version 1.0.31\n
+        - Fixed short names in army description for Chopper, Director Krennic and The Darksaber\n
+        - Sabine now enables Brawler command cards rather than Hunter ones if The Darksaber is in the army\n
+        - Sabine now enables both Brawler and Hunter command cards when added to an army with Maul and The Darksaber
+    </string>
+    <string name="dialog_release_notes_version_33">
+        Version 1.0.32\n
+        - Ability to export cards from IACP Season 4 to Vassal\n
+        - Fixed more short names
+    </string>
+    <string name="dialog_release_notes_version_34">
+        Version 1.0.33\n
+        - Added a new menu item in army screen to clone an army\n
+        - Added a dropdown to sort cards by name or cost in card chooser screen
+    </string>
+    <string name="dialog_release_notes_version_35">
+        Version 1.0.34\n
+        - Shortlisted cards already added to the army are not shown anymore in the chooser screen\n
+        - Fixed margins of ordering/filtering dropdown menus in chooser screen
+    </string>a
+    <string name="dialog_release_notes_version_36">
+        Version 1.0.35\n
+        - Fixed a bug exporting Iron Will and Parry as a Vassal save file
+    </string>
+    <string name="dialog_release_notes_version_37">
+        Version 2.0.0\n
+        - Data model and related resources are now separated from the app\n
+        - IA Builder is now open-source on GitHub\n
+        - Minor fixes to QR Code screen\n
+        - Update for IACP v4.1
+    </string>
+
+</resources>

@@ -1,0 +1,43 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.swia.iabuilder.activities.ArmyActivity">
+
+    <item
+        android:id="@+id/action_rename"
+        android:icon="@drawable/ic_rename"
+        android:title="@string/action_rename" />
+
+    <item
+        android:id="@+id/action_clone"
+        android:icon="@drawable/ic_clone"
+        android:title="@string/action_clone" />
+
+    <item
+        android:id="@+id/action_results"
+        android:icon="@drawable/ic_results"
+        android:title="@string/action_results" />
+
+    <item
+        android:id="@+id/action_share_link"
+        android:icon="@drawable/ic_share"
+        android:title="@string/action_share_link" />
+
+    <item
+        android:id="@+id/action_share_image"
+        android:icon="@drawable/ic_image"
+        android:title="@string/action_share_image" />
+
+    <item
+        android:id="@+id/action_share_file"
+        android:icon="@drawable/ic_save"
+        android:title="@string/action_share_file" />
+
+    <item
+        android:id="@+id/action_qrcode"
+        android:icon="@drawable/ic_qrcode"
+        android:title="@string/action_qrcode" />
+
+</menu>

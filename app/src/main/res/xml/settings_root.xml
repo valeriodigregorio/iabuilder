@@ -1,0 +1,43 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <com.swia.iabuilder.settings.PreferenceCategory
+        android:title="@string/preference_category_deck" >
+
+        <com.swia.iabuilder.settings.ColumnsNumberPreference
+            android:key="@string/setting_deck_columns_portrait"
+            android:title="@string/preference_title_columns_portrait"
+            android:summary="@string/preference_summary_columns" />
+
+        <com.swia.iabuilder.settings.ColumnsNumberPreference
+            android:key="@string/setting_deck_columns_landscape"
+            android:title="@string/preference_title_columns_landscape"
+            android:summary="@string/preference_summary_columns" />
+
+        <com.swia.iabuilder.settings.ImageScalingPreference
+            android:key="@string/setting_deck_image_scaling"
+            android:title="@string/preference_title_image_scaling"
+            android:summary="@string/preference_summary_image_scaling" />
+
+    </com.swia.iabuilder.settings.PreferenceCategory>
+
+    <com.swia.iabuilder.settings.PreferenceCategory
+        android:title="@string/preference_category_card_browser">
+
+        <com.swia.iabuilder.settings.ColumnsNumberPreference
+            android:key="@string/setting_card_browser_columns_portrait"
+            android:title="@string/preference_title_columns_portrait"
+            android:summary="@string/preference_summary_columns" />
+
+        <com.swia.iabuilder.settings.ColumnsNumberPreference
+            android:key="@string/setting_card_browser_columns_landscape"
+            android:title="@string/preference_title_columns_landscape"
+            android:summary="@string/preference_summary_columns" />
+
+        <com.swia.iabuilder.settings.ImageScalingPreference
+            android:key="@string/setting_card_browser_image_scaling"
+            android:title="@string/preference_title_image_scaling"
+            android:summary="@string/preference_summary_image_scaling" />
+
+    </com.swia.iabuilder.settings.PreferenceCategory>
+
+</PreferenceScreen>

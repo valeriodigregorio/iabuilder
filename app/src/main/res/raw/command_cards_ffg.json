@@ -1,0 +1,2265 @@
+[
+  {
+    "id": 0,
+    "name": "A Powerful Influence",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_a_powerful_influence",
+    "restrictions": [
+      "Rebel Force User"
+    ]
+  },
+  {
+    "id": 1,
+    "name": "Adrenaline",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_adrenaline",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Advance Warning",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_advance_warning",
+    "restrictions": [
+      "Leader"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Against the Odds",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_against_the_odds",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Assassinate",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_assassinate",
+    "restrictions": [
+      "Hunter"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Ballistics Matrix",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_ballistics_matrix",
+    "restrictions": [
+      "Imperial BT-1"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Battlefield Awareness",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_battlefield_awareness",
+    "restrictions": [
+      "Leader"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Behind Enemy Lines",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_behind_enemy_lines",
+    "restrictions": [
+      "Spy"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Black Market Prices",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_black_market_prices",
+    "restrictions": [
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Bladestorm",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_bladestorm",
+    "restrictions": [
+      "Mercenary Shyla Varad"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Blaze of Glory",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_blaze_of_glory",
+    "restrictions": [
+      "Mercenary IG-88"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Blitz",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_blitz",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Blood Feud",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_blood_feud",
+    "restrictions": [
+      "Mercenary Jabba the Hutt"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Bodyguard",
+    "cost": 1,
+    "limit": 2,
+    "image": "command_cards_bodyguard",
+    "restrictions": [
+      "Guardian"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Brace Yourself",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_brace_yourself",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Brace for Impact",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_brace_for_impact",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Burst Fire",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_burst_fire",
+    "restrictions": [
+      "Rebel Fenn Signis"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Call the Vanguard",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_call_the_vanguard",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Camouflage",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_camouflage",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Capture the Weary",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_capture_the_weary",
+    "restrictions": [
+      "Hunter"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Cavalry Charge",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_cavalry_charge",
+    "restrictions": [
+      "Imperial Captain Terro"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Celebration",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_celebration",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Change of Plans",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_change_of_plans",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Cheat to Win",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_cheat_to_win",
+    "restrictions": [
+      "Rebel Lando Calrissian"
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Close the Gap",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_close_the_gap",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Collect Intel",
+    "cost": 1,
+    "limit": 2,
+    "image": "command_cards_collect_intel",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Comm Disruption",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_comm_disruption",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Coordinated Attack",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_coordinated_attack",
+    "restrictions": [
+      "Rebel Loku Kanoloa"
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Counter Attack",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_counter_attack",
+    "restrictions": [
+      "Brawler"
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Covering Fire",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_covering_fire",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Cripple",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_cripple",
+    "restrictions": [
+      "Brawler",
+      "Hunter"
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Cruel Strike",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_cruel_strike",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Crush",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_crush",
+    "restrictions": [
+      "Any Massive Figure"
+    ]
+  },
+  {
+    "id": 33,
+    "name": "Cut Lines",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_cut_lines",
+    "restrictions": [
+      "Spy"
+    ]
+  },
+  {
+    "id": 34,
+    "name": "Dangerous Bargains",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_dangerous_bargains",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 35,
+    "name": "Data Theft",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_data_theft",
+    "restrictions": [
+      "Spy"
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Deadeye",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_deadeye",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 37,
+    "name": "Deadly Precision",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_deadly_precision",
+    "restrictions": [
+      "Imperial Force User"
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Debts Repaid",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_debts_repaid",
+    "restrictions": [
+      "Rebel Chewbacca"
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Deflection",
+    "cost": 1,
+    "limit": 2,
+    "image": "command_cards_deflection",
+    "restrictions": [
+      "Force User"
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Devotion",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_devotion",
+    "restrictions": [
+      "Droid"
+    ]
+  },
+  {
+    "id": 41,
+    "name": "Dirty Trick",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_dirty_trick",
+    "restrictions": [
+      "Hunter",
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 42,
+    "name": "Disable",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_disable",
+    "restrictions": [
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Disorient",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_disorient",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 44,
+    "name": "Draw!",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_draw",
+    "restrictions": [
+      "Mercenary Vinto Hreeda"
+    ]
+  },
+  {
+    "id": 45,
+    "name": "Eerie Visage",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_eerie_visage",
+    "restrictions": [
+      "Imperial 0-0-0"
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Efficient Travel",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_efficient_travel",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Element of Surprise",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_element_of_surprise",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 48,
+    "name": "Emergency Aid",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_emergency_aid",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Endless Reserves",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_endless_reserves",
+    "restrictions": [
+      "Imperial General Weiss"
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Espionage Mastery",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_espionage_mastery",
+    "restrictions": [
+      "Imperial Agent Blaise"
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Etiquette and Protocol",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_etiquette_and_protocol",
+    "restrictions": [
+      "Rebel C-3PO"
+    ]
+  },
+  {
+    "id": 52,
+    "name": "Evacuate",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_evacuate",
+    "restrictions": [
+      "Rebel Hera Syndulla"
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Explosive Weaponry",
+    "cost": 1,
+    "limit": 2,
+    "image": "command_cards_explosive_weaponry",
+    "restrictions": [
+      "Heavy Weapon"
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Expose Weakness",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_expose_weakness",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 55,
+    "name": "Extra Protection",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_extra_protection",
+    "restrictions": [
+      "Mercenary Onar Koma"
+    ]
+  },
+  {
+    "id": 56,
+    "name": "Fatal Deception",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_fatal_deception",
+    "restrictions": [
+      "Rebel Murne Rin"
+    ]
+  },
+  {
+    "id": 57,
+    "name": "Feral Swipes",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_feral_swipes",
+    "restrictions": [
+      "Creature"
+    ]
+  },
+  {
+    "id": 58,
+    "name": "Ferocity",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_ferocity",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 59,
+    "name": "Field Tactician",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_field_tactician",
+    "restrictions": [
+      "Any Small Figure"
+    ]
+  },
+  {
+    "id": 60,
+    "name": "Fleet Footed",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_fleet_footed",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 61,
+    "name": "Flurry of Blades",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_flurry_of_blades",
+    "restrictions": [
+      "Imperial Royal Guard Champion"
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Focus",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_focus",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Force Illusion",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_force_illusion",
+    "restrictions": [
+      "Force User"
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Force Lightning",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_force_lightning",
+    "restrictions": [
+      "Imperial Force User"
+    ]
+  },
+  {
+    "id": 65,
+    "name": "Force Rush",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_force_rush",
+    "restrictions": [
+      "Force User"
+    ]
+  },
+  {
+    "id": 66,
+    "name": "Force Surge",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_force_surge",
+    "restrictions": [
+      "Force User"
+    ]
+  },
+  {
+    "id": 67,
+    "name": "Fuel Upgrade",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_fuel_upgrade",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 68,
+    "name": "Furious Charge",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_furious_charge",
+    "restrictions": [
+      "Rebel Gaarkhan"
+    ]
+  },
+  {
+    "id": 69,
+    "name": "Glory of the Kill",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_glory_of_the_kill",
+    "restrictions": [
+      "Hunter"
+    ]
+  },
+  {
+    "id": 70,
+    "name": "Grenadier",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_grenadier",
+    "restrictions": [
+      "Trooper"
+    ]
+  },
+  {
+    "id": 71,
+    "name": "Grisly Contest",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_grisly_contest",
+    "restrictions": [
+      "Brawler"
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Guardian Stance",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_guardian_stance",
+    "restrictions": [
+      "Guardian"
+    ]
+  },
+  {
+    "id": 73,
+    "name": "Hard to Hit",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_hard_to_hit",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Harsh Environment",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_harsh_environment",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 75,
+    "name": "Heart of Freedom",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_heart_of_freedom",
+    "restrictions": [
+      "Any Rebel Figure"
+    ]
+  },
+  {
+    "id": 76,
+    "name": "Heavy Armor",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_heavy_armor",
+    "restrictions": [
+      "Vehicle"
+    ]
+  },
+  {
+    "id": 77,
+    "name": "Heightened Reflexes",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_heightened_reflexes",
+    "restrictions": [
+      "Hunter"
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Hidden Trap",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_hidden_trap",
+    "restrictions": [
+      "Rebel Saska Teft"
+    ]
+  },
+  {
+    "id": 79,
+    "name": "Hide in Plain Sight",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_hide_in_plain_sight",
+    "restrictions": [
+      "Spy"
+    ]
+  },
+  {
+    "id": 80,
+    "name": "Hit and Run",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_hit_and_run",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 81,
+    "name": "Hold Ground",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_hold_ground",
+    "restrictions": [
+      "Guardian"
+    ]
+  },
+  {
+    "id": 82,
+    "name": "Hunt Them Down",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_hunt_them_down",
+    "restrictions": [
+      "Imperial The Grand Inquisitor"
+    ]
+  },
+  {
+    "id": 83,
+    "name": "Hunter Protocol",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_hunter_protocol",
+    "restrictions": [
+      "Droid"
+    ]
+  },
+  {
+    "id": 84,
+    "name": "I Can Feel It",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_i_can_feel_it",
+    "restrictions": [
+      "Force User"
+    ]
+  },
+  {
+    "id": 85,
+    "name": "I Must Go Alone",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_i_must_go_alone",
+    "restrictions": [
+      "Rebel Obi-Wan Kenobi"
+    ]
+  },
+  {
+    "id": 86,
+    "name": "I Make My Own Luck",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_i_make_my_own_luck",
+    "restrictions": [
+      "Rebel Han Solo"
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Improvised Weapons",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_improvised_weapons",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 88,
+    "name": "In the Shadows",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_in_the_shadows",
+    "restrictions": [
+      "Hunter",
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Inspiring Speech",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_inspiring_speech",
+    "restrictions": [
+      "Leader"
+    ]
+  },
+  {
+    "id": 90,
+    "name": "Intelligence Leak",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_intelligence_leak",
+    "restrictions": [
+      "Spy"
+    ]
+  },
+  {
+    "id": 91,
+    "name": "Jump Jets",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_jump_jets",
+    "restrictions": [
+      "Any Small Figure"
+    ]
+  },
+  {
+    "id": 92,
+    "name": "Jundland Terror",
+    "cost": 2,
+    "limit": 2,
+    "image": "command_cards_jundland_terror",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 93,
+    "name": "Knowledge and Defense",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_knowledge_and_defense",
+    "restrictions": [
+      "Rebel Force User"
+    ]
+  },
+  {
+    "id": 94,
+    "name": "Lock On",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_lock_on",
+    "restrictions": [
+      "Heavy Weapon"
+    ]
+  },
+  {
+    "id": 95,
+    "name": "Lord of the Sith",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_lord_of_the_sith",
+    "restrictions": [
+      "Imperial Darth Vader"
+    ]
+  },
+  {
+    "id": 96,
+    "name": "Lure of the Dark Side",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_lure_of_the_dark_side",
+    "restrictions": [
+      "Imperial Force User"
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Mandalorian Tactics",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_mandalorian_tactics",
+    "restrictions": [
+      "Mercenary Boba Fett"
+    ]
+  },
+  {
+    "id": 98,
+    "name": "Marksman",
+    "cost": 1,
+    "limit": 2,
+    "image": "command_cards_marksman",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 99,
+    "name": "Master Operative",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_master_operative",
+    "restrictions": [
+      "Rebel Verena Talos"
+    ]
+  },
+  {
+    "id": 100,
+    "name": "Maximum Firepower",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_maximum_firepower",
+    "restrictions": [
+      "Heavy Weapon"
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Meditation",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_meditation",
+    "restrictions": [
+      "Rebel Force User"
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Merciless",
+    "cost": 1,
+    "limit": 2,
+    "image": "command_cards_merciless",
+    "restrictions": [
+      "Hunter"
+    ]
+  },
+  {
+    "id": 103,
+    "name": "Miracle Worker",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_miracle_worker",
+    "restrictions": [
+      "Rebel MHD-19"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Mitigate",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_mitigate",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Navigation Upgrade",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_navigation_upgrade",
+    "restrictions": [
+      "Droid"
+    ]
+  },
+  {
+    "id": 106,
+    "name": "Negation",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_negation",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 107,
+    "name": "New Orders",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_new_orders",
+    "restrictions": [
+      "Leader"
+    ]
+  },
+  {
+    "id": 108,
+    "name": "Of No Importance",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_of_no_importance",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 109,
+    "name": "On a Mission",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_on_a_mission",
+    "restrictions": [
+      "Rebel C1-10P"
+    ]
+  },
+  {
+    "id": 110,
+    "name": "On the Lam",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_on_the_lam",
+    "restrictions": [
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 111,
+    "name": "Opportunistic",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_opportunistic",
+    "restrictions": [
+      "Any Mercenary Figure"
+    ]
+  },
+  {
+    "id": 112,
+    "name": "Optimal Bombardment",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_optimal_bombardment",
+    "restrictions": [
+      "Imperial General Sorin"
+    ]
+  },
+  {
+    "id": 113,
+    "name": "Overcharged Weapons",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_overcharged_weapons",
+    "restrictions": [
+      "Any Ready Vehicle"
+    ]
+  },
+  {
+    "id": 114,
+    "name": "Overdrive",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_overdrive",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 115,
+    "name": "Overrun",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_overrun",
+    "restrictions": [
+      "Vehicle"
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Parry",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_parry",
+    "restrictions": [
+      "Brawler",
+      "Guardian"
+    ]
+  },
+  {
+    "id": 117,
+    "name": "Parting Blow",
+    "cost": 2,
+    "limit": 2,
+    "image": "command_cards_parting_blow",
+    "restrictions": [
+      "Brawler"
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Payback",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_payback",
+    "restrictions": [
+      "Mercenary Dengar"
+    ]
+  },
+  {
+    "id": 119,
+    "name": "Pickpocket",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_pickpocket",
+    "restrictions": [
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 120,
+    "name": "Positioning Advantage",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_positioning_advantage",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 121,
+    "name": "Primary Target",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_primary_target",
+    "restrictions": [
+      "Hunter"
+    ]
+  },
+  {
+    "id": 122,
+    "name": "Provoke",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_provoke",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 123,
+    "name": "Rally the Troops",
+    "cost": 3,
+    "limit": 1,
+    "image": "command_cards_rally_the_troops",
+    "restrictions": [
+      "Imperial Kayn Somos"
+    ]
+  },
+  {
+    "id": 124,
+    "name": "Rank and File",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_rank_and_file",
+    "restrictions": [
+      "Trooper"
+    ]
+  },
+  {
+    "id": 125,
+    "name": "Reinforcements",
+    "cost": 2,
+    "limit": 2,
+    "image": "command_cards_reinforcements",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 126,
+    "name": "Repair",
+    "cost": 2,
+    "limit": 2,
+    "image": "command_cards_repair",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 127,
+    "name": "Reposition",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_reposition",
+    "restrictions": [
+      "Leader"
+    ]
+  },
+  {
+    "id": 128,
+    "name": "Roar",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_roar",
+    "restrictions": [
+      "Creature",
+      "Wookiee"
+    ]
+  },
+  {
+    "id": 129,
+    "name": "Run for Cover",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_run_for_cover",
+    "restrictions": [
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 130,
+    "name": "Self-Defense",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_self_defense",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 131,
+    "name": "Set for Stun",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_set_for_stun",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 132,
+    "name": "Set a Trap",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_set_a_trap",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 133,
+    "name": "Shared Experience",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_shared_experience",
+    "restrictions": [
+      "Droid",
+      "Vehicle"
+    ]
+  },
+  {
+    "id": 134,
+    "name": "Shoot the Messenger",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_shoot_the_messenger",
+    "restrictions": [
+      "Any Mercenary Figure"
+    ]
+  },
+  {
+    "id": 135,
+    "name": "Single Purpose",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_single_purpose",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 136,
+    "name": "Size Advantage",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_size_advantage",
+    "restrictions": [
+      "Any Large Figure"
+    ]
+  },
+  {
+    "id": 137,
+    "name": "Slippery Target",
+    "cost": 2,
+    "limit": 2,
+    "image": "command_cards_slippery_target",
+    "restrictions": [
+      "Smuggler",
+      "Spy"
+    ]
+  },
+  {
+    "id": 138,
+    "name": "Smuggled Supplies",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_smuggled_supplies",
+    "restrictions": [
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 139,
+    "name": "Smugglers Tricks",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_smugglers_tricks",
+    "restrictions": [
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 140,
+    "name": "Squad Swarm",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_squad_swarm",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 141,
+    "name": "Stall for Time",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_stall_for_time",
+    "restrictions": [
+      "Leader",
+      "Spy"
+    ]
+  },
+  {
+    "id": 142,
+    "name": "Stay Down",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_stay_down",
+    "restrictions": [
+      "Rebel Biv Bodhrik"
+    ]
+  },
+  {
+    "id": 143,
+    "name": "Stealth Tactics",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_stealth_tactics",
+    "restrictions": [
+      "Any Small Figure"
+    ]
+  },
+  {
+    "id": 144,
+    "name": "Stimulants",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_stimulants",
+    "restrictions": [
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 145,
+    "name": "Strategic Shift",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_strategic_shift",
+    "restrictions": [
+      "Spy"
+    ]
+  },
+  {
+    "id": 146,
+    "name": "Strength in Numbers",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_strength_in_numbers",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 147,
+    "name": "Stroke of Brilliance",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_stroke_of_brilliance",
+    "restrictions": [
+      "Mercenary Greedo"
+    ]
+  },
+  {
+    "id": 148,
+    "name": "Survival Instincts",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_survival_instincts",
+    "restrictions": [
+      "Creature"
+    ]
+  },
+  {
+    "id": 149,
+    "name": "Take Position",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_take_position",
+    "restrictions": [
+      "Guardian",
+      "Vehicle"
+    ]
+  },
+  {
+    "id": 150,
+    "name": "Targeting Network",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_targeting_network",
+    "restrictions": [
+      "Droid",
+      "Heavy Weapon"
+    ]
+  },
+  {
+    "id": 151,
+    "name": "Terminal Network",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_terminal_network",
+    "restrictions": [
+      "Rebel R2-D2"
+    ]
+  },
+  {
+    "id": 152,
+    "name": "Terminal Protocol",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_terminal_protocol",
+    "restrictions": [
+      "Droid"
+    ]
+  },
+  {
+    "id": 153,
+    "name": "There is Another",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_there_is_another",
+    "restrictions": [
+      "Rebel Leia Organa"
+    ]
+  },
+  {
+    "id": 154,
+    "name": "Tools for the Job",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_tools_for_the_job",
+    "restrictions": [
+      "Hunter",
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 155,
+    "name": "Tough Luck",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_tough_luck",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 156,
+    "name": "Toxic Dart",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_toxic_dart",
+    "restrictions": [
+      "Hunter",
+      "Smuggler"
+    ]
+  },
+  {
+    "id": 157,
+    "name": "Trandoshan Terror",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_trandoshan_terror",
+    "restrictions": [
+      "Mercenary Bossk"
+    ]
+  },
+  {
+    "id": 158,
+    "name": "Triangulate",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_triangulate",
+    "restrictions": [
+      "Droid"
+    ]
+  },
+  {
+    "id": 159,
+    "name": "Utinni!",
+    "cost": 1,
+    "limit": 1,
+    "image": "command_cards_utinni",
+    "restrictions": [
+    ]
+  },
+  {
+    "id": 160,
+    "name": "Vanish",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_vanish",
+    "restrictions": [
+      "Rebel Davith Elso"
+    ]
+  },
+  {
+    "id": 161,
+    "name": "Wild Attack",
+    "cost": 0,
+    "limit": 1,
+    "image": "command_cards_wild_attack",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "id": 162,
+    "name": "Wild Fury",
+    "cost": 2,
+    "limit": 1,
+    "image": "command_cards_wild_fury",
+    "restrictions": [
+      "Creature",
+      "Wookiee"
+    ]
+  },
+  {
+    "id": 163,
+    "name": "Wookiee Rage",
+    "cost": 2,
+    "limit": 2,
+    "image": "command_cards_wookiee_rage",
+    "restrictions": [
+      "Wookiee"
+    ]
+  },
+  {
+    "name": "Arcing Shot",
+    "cost": 1,
+    "limit": 1,
+    "id": 164,
+    "image": "command_cards_arcing_shot",
+    "restrictions": [
+      "Rebel Drokkatta"
+    ]
+  },
+  {
+    "name": "Armed Escort",
+    "cost": 1,
+    "limit": 1,
+    "id": 165,
+    "image": "command_cards_armed_escort",
+    "restrictions": [
+      "Droid",
+      "Vehicle"
+    ]
+  },
+  {
+    "name": "Balancing Force",
+    "cost": 2,
+    "limit": 1,
+    "id": 174,
+    "image": "command_cards_balancing_force",
+    "restrictions": [
+    ]
+  },
+  {
+    "name": "Battle Scars",
+    "cost": 0,
+    "limit": 1,
+    "id": 166,
+    "image": "command_cards_battle_scars",
+    "restrictions": [
+      "Wookiee"
+    ]
+  },
+  {
+    "name": "Chaotic Force",
+    "cost": 2,
+    "limit": 1,
+    "id": 184,
+    "image": "command_cards_chaotic_force",
+    "restrictions": [
+    ]
+  },
+  {
+    "name": "Collateral Damage",
+    "cost": 1,
+    "limit": 1,
+    "id": 167,
+    "image": "command_cards_collateral_damage",
+    "restrictions": [
+      "Heavy Weapon"
+    ]
+  },
+  {
+    "name": "Concentrated Fire",
+    "cost": 1,
+    "limit": 1,
+    "id": 168,
+    "image": "command_cards_concentrated_fire",
+    "restrictions": [
+      "Trooper"
+    ]
+  },
+  {
+    "name": "Corrupting Force",
+    "cost": 2,
+    "limit": 1,
+    "id": 179,
+    "image": "command_cards_corrupting_force",
+    "restrictions": [
+    ]
+  },
+  {
+    "name": "Dark Energy",
+    "cost": 1,
+    "limit": 1,
+    "id": 180,
+    "image": "command_cards_dark_energy",
+    "restrictions": [
+      "Imperial Force User"
+    ]
+  },
+  {
+    "name": "Deathblow",
+    "cost": 1,
+    "limit": 1,
+    "id": 185,
+    "image": "command_cards_deathblow",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Droid Mastery",
+    "cost": 0,
+    "limit": 1,
+    "id": 169,
+    "image": "command_cards_droid_mastery",
+    "restrictions": [
+      "Rebel Jarrod Kelvin"
+    ]
+  },
+  {
+    "name": "Face to Face",
+    "cost": 1,
+    "limit": 1,
+    "id": 186,
+    "image": "command_cards_face_to_face",
+    "restrictions": [
+      "Brawler"
+    ]
+  },
+  {
+    "name": "Field Supply",
+    "cost": 1,
+    "limit": 1,
+    "id": 170,
+    "image": "command_cards_field_supply",
+    "restrictions": [
+      "Rebel Ko-Tun Feralo"
+    ]
+  },
+  {
+    "name": "Fool Me Once",
+    "cost": 0,
+    "limit": 1,
+    "id": 175,
+    "image": "command_cards_fool_me_once",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Force Jump",
+    "cost": 1,
+    "limit": 1,
+    "id": 176,
+    "image": "command_cards_force_jump",
+    "restrictions": [
+      "Force User"
+    ]
+  },
+  {
+    "name": "Force Push",
+    "cost": 1,
+    "limit": 1,
+    "id": 177,
+    "image": "command_cards_force_push",
+    "restrictions": [
+      "Rebel Force User"
+    ]
+  },
+  {
+    "name": "Forward March",
+    "cost": 1,
+    "limit": 1,
+    "id": 171,
+    "image": "command_cards_forward_march",
+    "restrictions": [
+      "Vehicle"
+    ]
+  },
+  {
+    "name": "Heavy Ordnance",
+    "cost": 0,
+    "limit": 1,
+    "id": 172,
+    "image": "command_cards_heavy_ordnance",
+    "restrictions": [
+      "Heavy Weapon"
+    ]
+  },
+  {
+    "name": "Looking for a Fight",
+    "cost": 0,
+    "limit": 1,
+    "id": 187,
+    "image": "command_cards_looking_for_a_fight",
+    "restrictions": [
+      "Brawler"
+    ]
+  },
+  {
+    "name": "Officer's Training",
+    "cost": 0,
+    "limit": 1,
+    "id": 181,
+    "image": "command_cards_officers_training",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Prepared for Battle",
+    "cost": 2,
+    "limit": 1,
+    "id": 182,
+    "image": "command_cards_prepared_for_battle",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Ready Weapons",
+    "cost": 0,
+    "limit": 1,
+    "id": 173,
+    "image": "command_cards_ready_weapons",
+    "restrictions": [
+      "Guardian",
+      "Trooper"
+    ]
+  },
+  {
+    "name": "Right Back At Ya!",
+    "cost": 1,
+    "limit": 1,
+    "id": 178,
+    "image": "command_cards_right_back_at_ya",
+    "restrictions": [
+      "Rebel Ahsoka Tano"
+    ]
+  },
+  {
+    "name": "Unlimited Power",
+    "cost": 2,
+    "limit": 1,
+    "id": 183,
+    "image": "command_cards_unlimited_power",
+    "restrictions": [
+      "Imperial Emperor Palpatine"
+    ]
+  },
+  {
+    "name": "Wreak Vengeance",
+    "cost": 1,
+    "limit": 1,
+    "id": 188,
+    "image": "command_cards_wreak_vengeance",
+    "restrictions": [
+      "Mercenary Maul"
+    ]
+  },
+  {
+    "name": "One in a Million",
+    "cost": 2,
+    "limit": 1,
+    "id": 189,
+    "image": "command_cards_one_in_a_million",
+    "restrictions": [
+      "Rebel Jyn Odan"
+    ]
+  },
+  {
+    "name": "Planning",
+    "cost": 0,
+    "limit": 1,
+    "id": 190,
+    "image": "command_cards_planning",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Price on Their Heads",
+    "cost": 1,
+    "limit": 1,
+    "id": 191,
+    "image": "command_cards_price_on_their_heads",
+    "restrictions": [
+      "Hunter"
+    ]
+  },
+  {
+    "name": "Pummel",
+    "cost": 1,
+    "limit": 2,
+    "id": 192,
+    "image": "command_cards_pummel",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Rally",
+    "cost": 0,
+    "limit": 1,
+    "id": 193,
+    "image": "command_cards_rally",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Recovery",
+    "cost": 0,
+    "limit": 1,
+    "id": 194,
+    "image": "command_cards_recovery",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Regroup",
+    "cost": 1,
+    "limit": 2,
+    "id": 195,
+    "image": "command_cards_regroup",
+    "restrictions": [
+      "Leader"
+    ]
+  },
+  {
+    "name": "Sarlacc Sweep",
+    "cost": 2,
+    "limit": 1,
+    "id": 196,
+    "image": "command_cards_sarlacc_sweep",
+    "restrictions": [
+      "Rebel Diala Passil"
+    ]
+  },
+  {
+    "name": "Shadow Ops",
+    "cost": 3,
+    "limit": 1,
+    "id": 197,
+    "image": "command_cards_shadow_ops",
+    "restrictions": [
+      "Rebel Mak Eshka'rey"
+    ]
+  },
+  {
+    "name": "Sit Tight",
+    "cost": 0,
+    "limit": 1,
+    "id": 198,
+    "image": "command_cards_sit_tight",
+    "restrictions": [
+    ]
+  },
+  {
+    "name": "Son of Skywalker",
+    "cost": 3,
+    "limit": 1,
+    "id": 199,
+    "image": "command_cards_son_of_skywalker",
+    "restrictions": [
+      "Rebel Luke Skywalker"
+    ]
+  },
+  {
+    "name": "Take Cover",
+    "cost": 0,
+    "limit": 1,
+    "id": 200,
+    "image": "command_cards_take_cover",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Take Initiative",
+    "cost": 0,
+    "limit": 1,
+    "id": 201,
+    "image": "command_cards_take_initiative",
+    "restrictions": [
+    ]
+  },
+  {
+    "name": "Take it Down",
+    "cost": 3,
+    "limit": 1,
+    "id": 202,
+    "image": "command_cards_take_it_down",
+    "restrictions": [
+      "Rebel Gideon Argus"
+    ]
+  },
+  {
+    "name": "Telekinetic Throw",
+    "cost": 1,
+    "limit": 1,
+    "id": 203,
+    "image": "command_cards_telekinetic_throw",
+    "restrictions": [
+      "Force User"
+    ]
+  },
+  {
+    "name": "To the Limit",
+    "cost": 0,
+    "limit": 1,
+    "id": 204,
+    "image": "command_cards_to_the_limit",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Urgency",
+    "cost": 0,
+    "limit": 1,
+    "id": 205,
+    "image": "command_cards_urgency",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Combat Resupply",
+    "cost": 1,
+    "limit": 1,
+    "id": 206,
+    "image": "command_cards_combat_resupply",
+    "restrictions": [
+      "Any Imperial Figure"
+    ]
+  },
+  {
+    "name": "Dying Lunge",
+    "cost": 2,
+    "limit": 1,
+    "id": 207,
+    "image": "command_cards_dying_lunge",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Escalating Hostility",
+    "cost": 1,
+    "limit": 3,
+    "id": 208,
+    "image": "command_cards_escalating_hostility",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Foresee",
+    "cost": 0,
+    "limit": 1,
+    "id": 209,
+    "image": "command_cards_foresee",
+    "restrictions": [
+      "Imperial Thrawn"
+    ]
+  },
+  {
+    "name": "Hostile Negotiation",
+    "cost": 1,
+    "limit": 1,
+    "id": 210,
+    "image": "command_cards_hostile_negotiation",
+    "restrictions": [
+      "Any Figure"
+    ]
+  },
+  {
+    "name": "Hour of Need",
+    "cost": 0,
+    "limit": 1,
+    "id": 211,
+    "image": "command_cards_hour_of_need",
+    "restrictions": [
+      "Any Rebel Figure"
+    ]
+  },
+  {
+    "name": "Induce Rage",
+    "cost": 1,
+    "limit": 1,
+    "id": 212,
+    "image": "command_cards_induce_rage",
+    "restrictions": [
+    ]
+  },
+  {
+    "name": "Karabast",
+    "cost": 1,
+    "limit": 1,
+    "id": 213,
+    "image": "command_cards_karabast",
+    "restrictions": [
+      "Rebel Zeb Orrelios"
+    ]
+  },
+  {
+    "name": "Learn by Example",
+    "cost": 1,
+    "limit": 1,
+    "id": 214,
+    "image": "command_cards_learn_by_example",
+    "restrictions": [
+      "Rebel Ezra Bridger"
+    ]
+  },
+  {
+    "name": "Lets Make a Deal",
+    "cost": 0,
+    "limit": 1,
+    "id": 215,
+    "image": "command_cards_lets_make_a_deal",
+    "restrictions": [
+      "Mercenary Hondo Ohnaka"
+    ]
+  },
+  {
+    "name": "Marked Territory",
+    "cost": 0,
+    "limit": 1,
+    "id": 216,
+    "image": "command_cards_marked_territory",
+    "restrictions": [
+      "Creature"
+    ]
+  },
+  {
+    "name": "Out of Time",
+    "cost": 1,
+    "limit": 1,
+    "id": 217,
+    "image": "command_cards_out_of_time",
+    "restrictions": [
+      "Any Mercenary Figure"
+    ]
+  },
+  {
+    "name": "Pack Alpha",
+    "cost": 1,
+    "limit": 1,
+    "id": 218,
+    "image": "command_cards_pack_alpha",
+    "restrictions": [
+      "Creature"
+    ]
+  },
+  {
+    "name": "Price of Glory",
+    "cost": 2,
+    "limit": 1,
+    "id": 219,
+    "image": "command_cards_price_of_glory",
+    "restrictions": [
+      "Any Imperial Figure"
+    ]
+  },
+  {
+    "name": "Protect the Old Ways",
+    "cost": 1,
+    "limit": 1,
+    "id": 220,
+    "image": "command_cards_protect_the_old_ways",
+    "restrictions": [
+      "Rebel Kanan Jarrus"
+    ]
+  },
+  {
+    "name": "Rebel Graffiti",
+    "cost": 0,
+    "limit": 1,
+    "id": 221,
+    "image": "command_cards_rebel_graffiti",
+    "restrictions": [
+      "Any Rebel Figure"
+    ]
+  },
+  {
+    "name": "Second Chance",
+    "cost": 2,
+    "limit": 1,
+    "id": 222,
+    "image": "command_cards_second_chance",
+    "restrictions": [
+      "Any Unique Figure"
+    ]
+  },
+  {
+    "name": "Signal Jammer",
+    "cost": 1,
+    "limit": 1,
+    "id": 223,
+    "image": "command_cards_signal_jammer",
+    "restrictions": [
+    ]
+  },
+  {
+    "name": "Spinning Kick",
+    "cost": 1,
+    "limit": 1,
+    "id": 224,
+    "image": "command_cards_spinning_kick",
+    "restrictions": [
+      "Rebel Tress Hacnua"
+    ]
+  },
+  {
+    "name": "Veteran Instincts",
+    "cost": 1,
+    "limit": 1,
+    "id": 225,
+    "image": "command_cards_veteran_instincts",
+    "restrictions": [
+      "Any Unique Figure"
+    ]
+  },
+  {
+    "name": "Wild Fire",
+    "cost": 1,
+    "limit": 1,
+    "id": 226,
+    "image": "command_cards_wild_fire",
+    "restrictions": [
+      "Rebel CT-1701"
+    ]
+  },
+  {
+    "name": "Worth Every Credit",
+    "cost": 2,
+    "limit": 1,
+    "id": 227,
+    "image": "command_cards_worth_every_credit",
+    "restrictions": [
+      "Any Mercenary Figure"
+    ]
+  }
+]

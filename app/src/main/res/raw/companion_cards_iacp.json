@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "name": "J4X-7",
+    "traits": [
+      "Droid"
+    ],
+    "restrictions": [
+      "Jarrod Kelvin"
+    ],
+    "image": "companion_cards_j4x_7",
+    "size": "Small",
+    "massive": false,
+    "health": 4,
+    "speed": 3
+  },
+  {
+    "id": 1,
+    "name": "Junk Droid",
+    "traits": [
+      "Droid"
+    ],
+    "restrictions": [
+      "Ugnaught Tinkerer"
+    ],
+    "image": "companion_cards_junk_droid",
+    "size": "Small",
+    "massive": false,
+    "health": 1,
+    "speed": 4
+  },
+  {
+    "id": 2,
+    "name": "Salacious B. Crumb",
+    "traits": [
+      "Brawler"
+    ],
+    "restrictions": [
+      "Indentured Jester"
+    ],
+    "image": "companion_cards_salacious_b_crumb",
+    "size": "Small",
+    "massive": false,
+    "health": 6,
+    "speed": 3
+  },
+  {
+    "id": 3,
+    "name": "The Child",
+    "traits": [
+      "Force User"
+    ],
+    "restrictions": [
+      "Clan of Two"
+    ],
+    "image": "companion_cards_the_child_iacp",
+    "size": "Small",
+    "massive": false,
+    "health": 2,
+    "speed": 3
+  }
+]
