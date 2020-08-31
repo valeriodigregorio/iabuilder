@@ -6,12 +6,34 @@
     <string name="card_system_iacp">IACP Season 4</string>
 
     <!-- Content Descriptions -->
-    <string name="faction">faction</string>
     <string name="qrcode">QR code</string>
-    <string name="card_system">card system</string>
-    <string name="shortlist">shortlist</string>
+    <string name="card_system">Card System</string>
+    <string name="card_type">Card Type</string>
+    <string name="faction">Faction</string>
+    <string name="affiliation">Affiliation</string>
     <string name="filter">Filter</string>
     <string name="order">Order</string>
+    <string name="shortlist">Shortlist</string>
+
+    <string-array name="card_systems">
+        <item>FFG</item>
+        <item>IACP</item>
+    </string-array>
+
+    <string-array name="card_types">
+        <item>Deployment</item>
+        <item>Command</item>
+        <item>Companion</item>
+        <item>Form</item>
+    </string-array>
+
+    <string-array name="affiliations">
+        <item>Any</item>
+        <item>Rebel</item>
+        <item>Imperial</item>
+        <item>Mercenary</item>
+        <item>Neutral</item>
+    </string-array>
 
     <string-array name="traits">
         <item>Any</item>
@@ -33,6 +55,7 @@
     </string-array>
 
     <string-array name="restrictions">
+        <item>All</item>
         <item>None</item>
         <item>Any Figure</item>
         <item>Brawler</item>
@@ -62,6 +85,10 @@
         <item>Name</item>
     </string-array>
 
+    <string-array name="disabled">
+        <item>-</item>
+    </string-array>
+
     <!-- Dialogs -->
     <string name="dialog_army_create_title">Create</string>
     <string name="dialog_army_create_message">Enter the army name:</string>
@@ -81,6 +108,7 @@
     <!-- Menus -->
     <string name="action_show">Show invalid cards</string>
     <string name="action_hide">Hide invalid cards</string>
+    <string name="action_browse_cards">Browse cards</string>
     <string name="action_import_link">Import link</string>
     <string name="action_import_file">Import file</string>
     <string name="action_share_link">Share link</string>
@@ -123,6 +151,7 @@
     <!-- Preferences -->
     <string name="activity_settings_title">Settings</string>
     <string name="preference_category_deck">Deck</string>
+    <string name="preference_category_card_chooser">Card Chooser</string>
     <string name="preference_category_card_browser">Card Browser</string>
     <string name="preference_title_columns_portrait">Number of columns in portrait mode</string>
     <string name="preference_title_columns_landscape">Number of columns in landscape mode</string>

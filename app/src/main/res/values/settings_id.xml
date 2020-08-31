@@ -2,6 +2,9 @@
     <string name="setting_deck_columns_portrait">setting_deck_columns_portrait</string>
     <string name="setting_deck_columns_landscape">setting_deck_columns_landscape</string>
     <string name="setting_deck_image_scaling">setting_deck_image_scaling</string>
+    <string name="setting_card_chooser_columns_portrait">setting_card_chooser_columns_portrait</string>
+    <string name="setting_card_chooser_columns_landscape">setting_card_chooser_columns_landscape</string>
+    <string name="setting_card_chooser_image_scaling">setting_card_chooser_image_scaling</string>
     <string name="setting_card_browser_columns_portrait">setting_card_browser_columns_portrait</string>
     <string name="setting_card_browser_columns_landscape">setting_card_browser_landscape</string>
     <string name="setting_card_browser_image_scaling">setting_card_browser_image_scaling</string>

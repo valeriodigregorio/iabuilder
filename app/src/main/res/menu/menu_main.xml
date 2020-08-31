@@ -5,6 +5,11 @@
     tools:context="com.swia.iabuilder.activities.MainActivity">
 
     <item
+        android:id="@+id/action_browse_cards"
+        android:icon="@drawable/ic_browser"
+        android:title="@string/action_browse_cards" />
+
+    <item
         android:id="@+id/action_import_link"
         android:icon="@drawable/ic_import"
         android:title="@string/action_import_link" />

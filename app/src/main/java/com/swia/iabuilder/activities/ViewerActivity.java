@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.swia.datasets.cards.Card;
 import com.swia.datasets.cards.CardSystem;
@@ -34,6 +35,9 @@ public class ViewerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewer);
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         Intent intent = getIntent();
 
         CardSystem cardSystem = CardSystem.values()[intent.getIntExtra(ARG_CARD_SYSTEM, 0)];
@@ -41,6 +45,7 @@ public class ViewerActivity extends AppCompatActivity {
         int cardId = intent.getIntExtra(ARG_CARD_ID, 0);
         Card card = cardType.getCard(cardSystem, cardId);
         if (card != null) {
+            setTitle(card.getName());
             ViewerRecyclerView recyclerView = findViewById(R.id.rclViewer);
             recyclerView.add(card);
             if (card instanceof DeploymentCard) {

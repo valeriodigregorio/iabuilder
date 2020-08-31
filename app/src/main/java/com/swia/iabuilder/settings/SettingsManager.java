@@ -19,6 +19,9 @@ public class SettingsManager {
             initializeIntSetting(context.getString(R.string.setting_deck_columns_portrait), 4);
             initializeIntSetting(context.getString(R.string.setting_deck_columns_landscape), 4);
             initializeIntSetting(context.getString(R.string.setting_deck_image_scaling), 2);
+            initializeIntSetting(context.getString(R.string.setting_card_chooser_columns_portrait), 4);
+            initializeIntSetting(context.getString(R.string.setting_card_chooser_columns_landscape), 4);
+            initializeIntSetting(context.getString(R.string.setting_card_chooser_image_scaling), 2);
             initializeIntSetting(context.getString(R.string.setting_card_browser_columns_portrait), 4);
             initializeIntSetting(context.getString(R.string.setting_card_browser_columns_landscape), 4);
             initializeIntSetting(context.getString(R.string.setting_card_browser_image_scaling), 2);

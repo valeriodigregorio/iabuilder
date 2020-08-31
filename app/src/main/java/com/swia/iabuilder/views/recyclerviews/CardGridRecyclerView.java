@@ -14,6 +14,7 @@ import com.swia.datasets.cards.CardType;
 import com.swia.iabuilder.datastores.ArmyStore;
 import com.swia.iabuilder.models.Army;
 import com.swia.iabuilder.views.adapters.DeckAdapter;
+import com.swia.iabuilder.views.callbacks.CardEntryDiffCallback;
 import com.swia.iabuilder.views.viewholders.CardViewHolder;
 import com.swia.iabuilder.views.viewholders.CollectionViewHolder;
 
@@ -76,7 +77,7 @@ public abstract class CardGridRecyclerView extends RecyclerView {
             Collections.sort(entries, comparator);
             ArrayList<CardViewHolder.CardEntry> collection = adapter.getCollection();
             adapter.setCollection(entries);
-            DiffCallback callback = new DiffCallback(collection, entries);
+            CardEntryDiffCallback callback = new CardEntryDiffCallback(collection, entries);
             DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
             diffResult.dispatchUpdatesTo(adapter);
             if (listener != null) {
@@ -114,39 +115,4 @@ public abstract class CardGridRecyclerView extends RecyclerView {
         void onUpdated();
     }
 
-    private static class DiffCallback extends DiffUtil.Callback {
-
-        private final ArrayList<CardViewHolder.CardEntry> oldCollection;
-        private final ArrayList<CardViewHolder.CardEntry> newCollection;
-
-        public DiffCallback(ArrayList<CardViewHolder.CardEntry> oldCollection, ArrayList<CardViewHolder.CardEntry> newCollection) {
-            this.oldCollection = oldCollection;
-            this.newCollection = newCollection;
-        }
-
-        @Override
-        public int getOldListSize() {
-            return oldCollection.size();
-        }
-
-        @Override
-        public int getNewListSize() {
-            return newCollection.size();
-        }
-
-        @Override
-        public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-            CardViewHolder.CardEntry entry1 = oldCollection.get(oldItemPosition);
-            CardViewHolder.CardEntry entry2 = newCollection.get(newItemPosition);
-            return entry1.getCard().getCardType() == entry2.getCard().getCardType() &&
-                    entry1.getCard().getId() == entry2.getCard().getId();
-        }
-
-        @Override
-        public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-            CardViewHolder.CardEntry entry1 = oldCollection.get(oldItemPosition);
-            CardViewHolder.CardEntry entry2 = newCollection.get(newItemPosition);
-            return entry1.equals(entry2);
-        }
-    }
 }

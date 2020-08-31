@@ -67,7 +67,7 @@ public class ChooserRecyclerView extends CardGridRecyclerView implements Adapter
 
     public ChooserRecyclerView(@NonNull Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        String key = context.getString(R.string.setting_card_browser_image_scaling);
+        String key = context.getString(R.string.setting_card_chooser_image_scaling);
         setAdapter(new DeckAdapter(SettingsManager.getIntSetting(key)));
     }
 

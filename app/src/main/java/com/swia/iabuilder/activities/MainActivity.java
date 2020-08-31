@@ -248,6 +248,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         switch (item.getItemId()) {
+            case R.id.action_browse_cards: {
+                BrowserActivity.show(this);
+                return true;
+            }
             case R.id.action_import_link: {
                 String url = null;
                 ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);

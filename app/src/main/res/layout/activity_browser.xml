@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activities.ChooserActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2">
+
+            <Spinner
+                android:id="@+id/spnCardSystem"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_spinner_height"
+                android:paddingStart="@dimen/layout_padding"
+                android:paddingEnd="@dimen/layout_padding" />
+
+            <Spinner
+                android:id="@+id/spnCardType"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_spinner_height"
+                android:paddingStart="@dimen/layout_padding"
+                android:paddingEnd="@dimen/layout_padding" />
+
+            <Spinner
+                android:id="@+id/spnAffiliation"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_spinner_height"
+                android:paddingStart="@dimen/layout_padding"
+                android:paddingEnd="@dimen/layout_padding" />
+
+            <Spinner
+                android:id="@+id/spnFilter"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_spinner_height"
+                android:paddingStart="@dimen/layout_padding"
+                android:paddingEnd="@dimen/layout_padding" />
+
+            <Spinner
+                android:id="@+id/spnOrder"
+                android:layout_columnWeight="1"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_spinner_height"
+                android:paddingStart="@dimen/layout_padding"
+                android:paddingEnd="@dimen/layout_padding" />
+
+            <EditText
+                android:id="@+id/edtFilter"
+                android:layout_columnWeight="1"
+                android:maxLines="1"
+                android:inputType="text"
+                android:imeOptions="actionDone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/toolbar_spinner_height"
+                android:paddingStart="@dimen/layout_padding"
+                android:paddingEnd="@dimen/layout_padding" />
+
+        </GridLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.swia.iabuilder.views.recyclerviews.CardBrowserGridRecyclerView
+        android:id="@+id/rclBrowser"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

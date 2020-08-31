@@ -14,6 +14,7 @@ import com.swia.iabuilder.datastores.ArmyStore;
 import com.swia.iabuilder.models.Army;
 import com.swia.iabuilder.models.Faction;
 import com.swia.iabuilder.views.adapters.ArmyAdapter;
+import com.swia.iabuilder.views.callbacks.ArmyDiffCallback;
 import com.swia.iabuilder.views.callbacks.SwipeToDeleteCallback;
 import com.swia.iabuilder.views.viewholders.CollectionViewHolder;
 
@@ -89,7 +90,7 @@ public class ArmyCollectionRecyclerView extends RecyclerView {
         }
         Collections.sort(newCollection, COMPARER);
         adapter.setCollection(newCollection);
-        DiffCallback callback = new DiffCallback(collection, newCollection);
+        ArmyDiffCallback callback = new ArmyDiffCallback(collection, newCollection);
         DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(callback);
         diffResult.dispatchUpdatesTo(adapter);
     }
@@ -100,42 +101,5 @@ public class ArmyCollectionRecyclerView extends RecyclerView {
             return army1.getName().compareTo(army2.getName());
         }
     }
-    
-    private static class DiffCallback extends DiffUtil.Callback {
 
-        private final ArrayList<Army> oldCollection;
-        private final ArrayList<Army> newCollection;
-
-        public DiffCallback(ArrayList<Army> oldCollection, ArrayList<Army> newCollection) {
-            this.oldCollection = oldCollection;
-            this.newCollection = newCollection;
-        }
-
-        @Override
-        public int getOldListSize() {
-            return oldCollection.size();
-        }
-
-        @Override
-        public int getNewListSize() {
-            return newCollection.size();
-        }
-
-        @Override
-        public boolean areItemsTheSame(int oldItemPosition, int newItemPosition) {
-            Army army1 = oldCollection.get(oldItemPosition);
-            Army army2 = newCollection.get(newItemPosition);
-            return army1.getUuid().equals(army2.getUuid());
-        }
-
-        @Override
-        public boolean areContentsTheSame(int oldItemPosition, int newItemPosition) {
-            Army army1 = oldCollection.get(oldItemPosition);
-            Army army2 = newCollection.get(newItemPosition);
-            return army1.getName().equals(army2.getName()) &&
-                    army1.getDescription().equals(army2.getDescription()) &&
-                    army1.getVictories() == army2.getVictories() &&
-                    army1.getDefeats() == army2.getDefeats();
-        }
-    }
 }

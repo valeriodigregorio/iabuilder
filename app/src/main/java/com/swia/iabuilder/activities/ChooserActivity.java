@@ -123,9 +123,9 @@ public class ChooserActivity extends AppCompatActivity implements CollectionView
 
         int columns;
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            columns = SettingsManager.getIntSetting(getString(R.string.setting_card_browser_columns_landscape));
+            columns = SettingsManager.getIntSetting(getString(R.string.setting_card_chooser_columns_landscape));
         } else {
-            columns = SettingsManager.getIntSetting(getString(R.string.setting_card_browser_columns_portrait));
+            columns = SettingsManager.getIntSetting(getString(R.string.setting_card_chooser_columns_portrait));
         }
 
         recyclerView.initialize(getArmyId(), cardType);
