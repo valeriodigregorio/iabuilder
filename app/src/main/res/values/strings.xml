@@ -103,6 +103,64 @@
         <item>Massive</item>
     </string-array>
 
+    <string-array name="boxes">
+        <item>All</item>
+        <item>Core Set</item>
+        <item>Luke Skywalker Ally Pack</item>
+        <item>Darth Vader Villain Pack</item>
+        <item>Chewbacca Ally Pack</item>
+        <item>General Weiss Villain Pack</item>
+        <item>Han Solo Ally Pack</item>
+        <item>IG-88 Villain Pack</item>
+        <item>Rebel Saboteurs Ally Pack</item>
+        <item>Rebel Troopers Ally Pack</item>
+        <item>Royal Guard Champion Villain Pack</item>
+        <item>Twin Shadows</item>
+        <item>Boba Fett Villain Pack</item>
+        <item>Kayn Somos Villain Pack</item>
+        <item>R2-D2 and C-3PO Ally Pack</item>
+        <item>Hired Guns Villain Pack</item>
+        <item>Stormtroopers Villain Pack</item>
+        <item>Wookiee Warriors Ally Pack</item>
+        <item>Return to Hoth</item>
+        <item>Alliance Smuggler Ally Pack</item>
+        <item>Bantha Rider Villain Pack</item>
+        <item>Dengar Villain Pack</item>
+        <item>Echo Base Troopers Ally Pack</item>
+        <item>General Sorin Villain Pack</item>
+        <item>Leia Organa Ally Pack</item>
+        <item>The Bespin Gambit</item>
+        <item>Agent Blaise Villain Pack</item>
+        <item>Bossk Villain Pack</item>
+        <item>ISB Infiltrators Villain Pack</item>
+        <item>Lando Calrissian Ally Pack</item>
+        <item>Greedo Villain Pack</item>
+        <item>Obi-Wan Kenobi Ally Pack</item>
+        <item>The Grand Inquisitor Villain Pack</item>
+        <item>Jabba\'s Realm</item>
+        <item>Alliance Rangers Ally Pack</item>
+        <item>Captain Terro Villain Pack</item>
+        <item>Jabba the Hutt Villain Pack</item>
+        <item>Luke Skywalker Jedi Knight Ally Pack</item>
+        <item>BT-1 and 0-0-0 Villain Pack</item>
+        <item>Hera Syndulla and C1-10P Ally Pack</item>
+        <item>Jawa Scavenger Villain Pack</item>
+        <item>Heart of the Empire</item>
+        <item>Ahsoka Tano Ally Pack</item>
+        <item>Emperor Palpatine Villain Pack</item>
+        <item>Maul Villain Pack</item>
+        <item>Tyrants of Lothal</item>
+        <item>Ezra Bridger and Kanan Jarrus Ally Pack</item>
+        <item>Hondo Ohnaka Villain Pack</item>
+        <item>Sabine Wren and Zeb Orrelios Ally Pack</item>
+        <item>Thrawn Villain Pack</item>
+        <item>IACP All Seasons</item>
+        <item>IACP Season 1</item>
+        <item>IACP Season 2</item>
+        <item>IACP Season 3</item>
+        <item>IACP Season 4</item>
+    </string-array>
+
     <!-- Dialogs -->
     <string name="dialog_army_create_title">Create</string>
     <string name="dialog_army_create_message">Enter the army name:</string>

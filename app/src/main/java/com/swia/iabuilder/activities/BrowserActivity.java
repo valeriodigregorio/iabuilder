@@ -66,6 +66,9 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
         String value = getSpinnerValue(R.id.spnCardType);
         return CardType.fromString(value);
     }
+    private String getBox() {
+        return getSpinnerValue(R.id.spnBox);
+    }
 
     private Affiliation getAffiliation() {
         String value = getSpinnerValue(R.id.spnAffiliation);
@@ -149,12 +152,13 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
 
         Card[] cards = cardType.getAllCards(cardSystem);
         ArrayList<CardViewHolder.CardEntry> collection = new CardDatastore(cards)
+                .whereBoxIs(getBox())
                 .whereAffiliationIs(getAffiliation())
                 .whereTraitIs(getTrait())
                 .whereRestrictionIs(getRestriction())
                 .whereFigureTypeIs(getFigureType())
                 .whereFigureSizeIs(getFigureSize())
-                .whereCardContains(getTextFilter())
+                .whereTextContains(getTextFilter())
                 .orderBy(getSortingOrder())
                 .getCollection();
 
@@ -170,6 +174,7 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
 
         createSpinner(R.id.spnCardSystem, R.array.card_systems, true);
         createSpinner(R.id.spnCardType, R.array.card_types, true);
+        createSpinner(R.id.spnBox, R.array.boxes, true);
 
         EditText filter = findViewById(R.id.edtFilter);
         filter.addTextChangedListener(this);
@@ -206,6 +211,7 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
                 onClearBrowser();
                 onUpdateSpinners();
             case R.id.spnCardSystem:
+            case R.id.spnBox:
             case R.id.spnAffiliation:
             case R.id.spnTrait:
             case R.id.spnRestriction:

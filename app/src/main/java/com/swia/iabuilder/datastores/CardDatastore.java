@@ -17,12 +17,39 @@ import java.util.Comparator;
 
 public class CardDatastore {
 
+    private static final int IACP_SEASONS = 4;
+
     private ArrayList<CardViewHolder.CardEntry> entries = new ArrayList<>();
 
     public CardDatastore(Card[] cards) {
         for(Card card : cards) {
             this.entries.add(new CardViewHolder.CardEntry(card, true, false));
         }
+    }
+
+    public CardDatastore whereBoxIs(String box) {
+        if (box == null || box.equals("All")) {
+            return this;
+        }
+        boolean anyIACP = box.equals("IACP All Seasons");
+        ArrayList<CardViewHolder.CardEntry> entries = new ArrayList<>();
+        for(CardViewHolder.CardEntry entry : this.entries) {
+            Card card = entry.getCard();
+            if (anyIACP) {
+                for(int i = 1; i <= IACP_SEASONS; i++) {
+                    if (card.isInside("IACP Season " + i)) {
+                        entries.add(entry);
+                        break;
+                    }
+                }
+                continue;
+            }
+            if (card.isInside(box)) {
+                entries.add(entry);
+            }
+        }
+        this.entries = entries;
+        return this;
     }
 
     public CardDatastore whereAffiliationIs(Affiliation affiliation) {
@@ -148,19 +175,23 @@ public class CardDatastore {
         return this;
     }
 
-    public CardDatastore whereCardContains(String text) {
+    public CardDatastore whereTextContains(String text) {
         if (text == null || text.length() == 0) {
             return this;
         }
-        text = text.toUpperCase();
         ArrayList<CardViewHolder.CardEntry> entries = new ArrayList<>();
         for(CardViewHolder.CardEntry entry : this.entries) {
             Card card = entry.getCard();
+            CardType cardType = card.getCardType();
             StringBuilder content = new StringBuilder(card.getName());
-            if (card instanceof DeploymentCard) {
+            if (cardType == CardType.DEPLOYMENT) {
                 content.append(((DeploymentCard) card).getDescription());
             }
-            if (content.toString().toUpperCase().contains(text)) {
+            String t = card.getText();
+            t = t == null ? "" : t;
+            content.append(t);
+            content.append(t.replace("[", "").replace("]", ""));
+            if (content.toString().toUpperCase().contains(text.toUpperCase())) {
                 entries.add(entry);
             }
         }

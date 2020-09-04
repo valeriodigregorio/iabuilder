@@ -38,6 +38,20 @@
                     android:paddingEnd="@dimen/layout_padding" />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Spinner
+                    android:id="@+id/spnBox"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/toolbar_spinner_height"
+                    android:paddingStart="@dimen/layout_padding"
+                    android:paddingEnd="@dimen/layout_padding" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -91,6 +105,14 @@
                     android:paddingStart="@dimen/layout_padding"
                     android:paddingEnd="@dimen/layout_padding" />
 
+                <Spinner
+                    android:id="@+id/spnOrder"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/toolbar_spinner_height"
+                    android:paddingStart="@dimen/layout_padding"
+                    android:paddingEnd="@dimen/layout_padding" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -106,16 +128,8 @@
                     android:layout_weight="4"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
-
-                <Spinner
-                    android:id="@+id/spnOrder"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
+                    android:layout_marginStart="@dimen/layout_padding"
+                    android:layout_marginEnd="@dimen/layout_padding" />
 
             </LinearLayout>
 
