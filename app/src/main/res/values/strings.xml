@@ -364,5 +364,10 @@
         - Minor fixes to QR Code screen\n
         - Update for IACP v4.1
     </string>
+    <string name="dialog_release_notes_version_38">
+        Version 2.1.0\n
+        - Added "Browse cards" menu option in main screen\n
+        - Card browser functionality can be used to search and display cards by applying a wide range of filters
+    </string>
 
 </resources>
