@@ -29,7 +29,7 @@
                 android:orientation="horizontal">
 
                 <Spinner
-                    android:id="@+id/spnOrder"
+                    android:id="@+id/spnTrait"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -37,12 +37,21 @@
                     android:paddingEnd="@dimen/layout_padding" />
 
                 <Spinner
-                    android:id="@+id/spnFilter"
+                    android:id="@+id/spnRestriction"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:paddingStart="@dimen/layout_padding"
                     android:paddingEnd="@dimen/layout_padding" />
+
+                <Spinner
+                    android:id="@+id/spnOrder"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="@dimen/layout_padding"
+                    android:paddingEnd="@dimen/layout_padding" />
+
             </LinearLayout>
         </LinearLayout>
 

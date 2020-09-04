@@ -89,6 +89,20 @@
         <item>-</item>
     </string-array>
 
+    <string-array name="figure_types">
+        <item>All</item>
+        <item>Regular</item>
+        <item>Elite</item>
+        <item>Unique</item>
+    </string-array>
+
+    <string-array name="figure_sizes">
+        <item>All</item>
+        <item>Small</item>
+        <item>Large</item>
+        <item>Massive</item>
+    </string-array>
+
     <!-- Dialogs -->
     <string name="dialog_army_create_title">Create</string>
     <string name="dialog_army_create_message">Enter the army name:</string>

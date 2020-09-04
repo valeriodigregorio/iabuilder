@@ -71,10 +71,16 @@ public abstract class CardGridRecyclerView extends RecyclerView {
         }
     }
 
+    protected void updateCollection(ArrayList<CardViewHolder.CardEntry> entries) {
+        updateCollection(entries, null);
+    }
+
     protected void updateCollection(ArrayList<CardViewHolder.CardEntry> entries, Comparator<CardViewHolder.CardEntry> comparator) {
         DeckAdapter adapter = (DeckAdapter) getAdapter();
         if (adapter != null) {
-            Collections.sort(entries, comparator);
+            if (comparator != null) {
+                Collections.sort(entries, comparator);
+            }
             ArrayList<CardViewHolder.CardEntry> collection = adapter.getCollection();
             adapter.setCollection(entries);
             CardEntryDiffCallback callback = new CardEntryDiffCallback(collection, entries);

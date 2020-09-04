@@ -40,7 +40,7 @@ public class VassalParser {
                     ejawa = true;
                 } else {
                     Affiliation affiliation = ((DeploymentCard) card).getAffiliation();
-                    Faction f = Faction.fromAffiliation(com.swia.datasets.cards.Affiliation.valueOf(affiliation.toString()));
+                    Faction f = Faction.fromAffiliation(com.swia.datasets.cards.Affiliation.fromString(affiliation.toString()));
                     faction = (f == null ? faction : f);
                 }
             }

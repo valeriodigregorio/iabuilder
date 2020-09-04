@@ -3,7 +3,6 @@ package com.swia.iabuilder.activities;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -12,7 +11,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,11 +18,9 @@ import com.swia.datasets.cards.Affiliation;
 import com.swia.datasets.cards.Card;
 import com.swia.datasets.cards.CardSystem;
 import com.swia.datasets.cards.CardType;
-import com.swia.datasets.cards.CommandCard;
-import com.swia.datasets.cards.DeployableCard;
-import com.swia.datasets.cards.DeploymentCard;
 import com.swia.datasets.cards.Trait;
 import com.swia.iabuilder.R;
+import com.swia.iabuilder.datastores.CardDatastore;
 import com.swia.iabuilder.settings.SettingsManager;
 import com.swia.iabuilder.views.adapters.DeckAdapter;
 import com.swia.iabuilder.views.recyclerviews.CardBrowserGridRecyclerView;
@@ -32,8 +28,6 @@ import com.swia.iabuilder.views.viewholders.CardViewHolder;
 import com.swia.iabuilder.views.viewholders.CollectionViewHolder;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class BrowserActivity extends AppCompatActivity implements CollectionViewHolder.OnItemClickListener<CardViewHolder.CardEntry>, AdapterView.OnItemSelectedListener, TextWatcher {
 
@@ -45,12 +39,58 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
     private void createSpinner(int id, int resource, boolean enabled) {
         Spinner spinner = findViewById(id);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                this, resource, android.R.layout.simple_spinner_item);
+                this, resource, R.layout.spinner_layout);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setEnabled(enabled);
+        spinner.setVisibility(enabled ? View.VISIBLE : View.GONE);
         spinner.setOnItemSelectedListener(this);
         spinner.setSelection(0);
+    }
+
+    private String getSpinnerValue(int spinnerId) {
+        Spinner spinner = findViewById(spinnerId);
+        try {
+            return spinner.isEnabled() ? spinner.getSelectedItem().toString() : null;
+        } catch (NullPointerException e) {
+            return null;
+        }
+    }
+
+    private CardSystem getCardSystem() {
+        String value = getSpinnerValue(R.id.spnCardSystem);
+        return CardSystem.fromString(value);
+    }
+
+    private CardType getCardType() {
+        String value = getSpinnerValue(R.id.spnCardType);
+        return CardType.fromString(value);
+    }
+
+    private Affiliation getAffiliation() {
+        String value = getSpinnerValue(R.id.spnAffiliation);
+        return Affiliation.fromString(value);
+    }
+
+    private String getSortingOrder() {
+        return getSpinnerValue(R.id.spnOrder);
+    }
+
+    private Trait getTrait() {
+        String value = getSpinnerValue(R.id.spnTrait);
+        return Trait.fromString(value);
+    }
+
+    private String getRestriction() {
+        return getSpinnerValue(R.id.spnRestriction);
+    }
+
+    private String getFigureType() {
+        return getSpinnerValue(R.id.spnFigureType);
+    }
+
+    private String getFigureSize() {
+        return getSpinnerValue(R.id.spnFigureSize);
     }
 
     private String getTextFilter() {
@@ -58,78 +98,34 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
         return filter.getText().toString();
     }
 
-    private CardSystem getCardSystem() {
-        Spinner spinner = findViewById(R.id.spnCardSystem);
-        String value = spinner.getSelectedItem().toString();
-        return CardSystem.valueOf(value.toUpperCase());
-    }
-
-    private CardType getCardType() {
-        Spinner spinner = findViewById(R.id.spnCardType);
-        String value = spinner.getSelectedItem().toString();
-        return CardType.valueOf(value.toUpperCase());
-    }
-
-    private Affiliation getAffiliation() {
-        Spinner spinner = findViewById(R.id.spnAffiliation);
-        try {
-            String value = spinner.getSelectedItem().toString();
-            return Affiliation.valueOf(value.toUpperCase());
-        } catch (IllegalArgumentException | NullPointerException e) {
-            return null;
-        }
-    }
-
-    private Comparator<CardViewHolder.CardEntry> getComparator() {
-        Spinner spinner = findViewById(R.id.spnOrder);
-        if (spinner.isEnabled()) {
-            Object item = spinner.getSelectedItem();
-            if (item != null) {
-                String value = item.toString();
-                switch (value) {
-                    case "Cost":
-                        return CardViewHolder.CardEntry::compareByCost;
-                    case "Name":
-                        return CardViewHolder.CardEntry::compareByName;
-                    default:
-                }
-            }
-        }
-        return CardViewHolder.CardEntry::compareTo;
-    }
-
-    private String getFilter() {
-        Spinner spinner = findViewById(R.id.spnFilter);
-        try {
-            return spinner.getSelectedItem().toString();
-        } catch (NullPointerException e) {
-            return null;
-        }
-    }
-
     private void onUpdateSpinners() {
+        createSpinner(R.id.spnAffiliation, R.array.affiliations, false);
+        createSpinner(R.id.spnFigureType, R.array.figure_types, false);
+        createSpinner(R.id.spnFigureSize, R.array.figure_sizes, false);
+        createSpinner(R.id.spnOrder, R.array.orders, false);
+        createSpinner(R.id.spnTrait, R.array.disabled, false);
+        createSpinner(R.id.spnRestriction, R.array.disabled, false);
+
         CardType cardType = getCardType();
+        if (cardType == null) {
+            return;
+        }
+
         switch (cardType) {
             case DEPLOYMENT:
                 createSpinner(R.id.spnAffiliation, R.array.affiliations, true);
+                createSpinner(R.id.spnFigureType, R.array.figure_types, true);
+                createSpinner(R.id.spnFigureSize, R.array.figure_sizes, true);
                 createSpinner(R.id.spnOrder, R.array.orders, true);
-                createSpinner(R.id.spnFilter, R.array.traits, true);
+            case COMPANION:
+                createSpinner(R.id.spnTrait, R.array.traits, true);
                 break;
             case COMMAND:
-                createSpinner(R.id.spnAffiliation, R.array.affiliations, false);
                 createSpinner(R.id.spnOrder, R.array.orders, true);
-                createSpinner(R.id.spnFilter, R.array.restrictions, true);
-                break;
-            case COMPANION:
-                createSpinner(R.id.spnAffiliation, R.array.affiliations, false);
-                createSpinner(R.id.spnOrder, R.array.orders, false);
-                createSpinner(R.id.spnFilter, R.array.traits, true);
+                createSpinner(R.id.spnRestriction, R.array.restrictions, true);
                 break;
             case FORM:
             default:
-                createSpinner(R.id.spnAffiliation, R.array.affiliations, false);
-                createSpinner(R.id.spnOrder, R.array.orders, false);
-                createSpinner(R.id.spnFilter, R.array.disabled, false);
                 break;
         }
     }
@@ -142,51 +138,29 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
 
     private void onUpdateBrowser() {
         CardSystem cardSystem = getCardSystem();
-        CardType cardType = getCardType();
-        ArrayList<CardViewHolder.CardEntry> collection = new ArrayList<>();
-        String filter = getFilter();
-        if (filter != null) {
-            for (Card card : cardType.getAllCards(cardSystem)) {
-                StringBuilder text = new StringBuilder(card.getName());
-                if (card instanceof DeploymentCard) {
-                    DeploymentCard c = (DeploymentCard) card;
-                    text.append(c.getDescription());
-                    Affiliation affiliation = getAffiliation();
-                    if (affiliation != null && c.getAffiliation() != affiliation) {
-                        continue;
-                    }
-                }
-                if (card instanceof DeployableCard) {
-                    Trait trait = Trait.fromString(filter);
-                    DeployableCard c = (DeployableCard) card;
-                    if (!c.hasTrait(trait)) {
-                        continue;
-                    }
-                } else if (card instanceof CommandCard) {
-                    CommandCard c = (CommandCard) card;
-                    String[] restrictions = c.getRestrictions();
-                    if (!filter.equals("All") && (!filter.equals("None") || restrictions.length != 0)) {
-                        boolean found = false;
-                        for (String restriction : restrictions) {
-                            if (restriction.contains(filter)) {
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) {
-                            continue;
-                        }
-                    }
-                }
-                String textFilter = getTextFilter();
-                if (textFilter.length() == 0 || text.toString().toLowerCase().contains(textFilter.toLowerCase())) {
-                    collection.add(new CardViewHolder.CardEntry(card, true, false));
-                }
-            }
+        if (cardSystem == null) {
+            return;
         }
-        Collections.sort(collection, getComparator());
+
+        CardType cardType = getCardType();
+        if (cardType == null) {
+            return;
+        }
+
+        Card[] cards = cardType.getAllCards(cardSystem);
+        ArrayList<CardViewHolder.CardEntry> collection = new CardDatastore(cards)
+                .whereAffiliationIs(getAffiliation())
+                .whereTraitIs(getTrait())
+                .whereRestrictionIs(getRestriction())
+                .whereFigureTypeIs(getFigureType())
+                .whereFigureSizeIs(getFigureSize())
+                .whereCardContains(getTextFilter())
+                .orderBy(getSortingOrder())
+                .getCollection();
+
         CardBrowserGridRecyclerView recyclerView = findViewById(R.id.rclBrowser);
         recyclerView.update(collection);
+        recyclerView.scrollToPosition(0);
     }
 
     @Override
@@ -227,14 +201,16 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        ((TextView)parent.getChildAt(0)).setTextColor(view.isEnabled() ? Color.WHITE : Color.GRAY);
         switch (parent.getId()) {
             case R.id.spnCardType:
                 onClearBrowser();
                 onUpdateSpinners();
             case R.id.spnCardSystem:
             case R.id.spnAffiliation:
-            case R.id.spnFilter:
+            case R.id.spnTrait:
+            case R.id.spnRestriction:
+            case R.id.spnFigureType:
+            case R.id.spnFigureSize:
             case R.id.spnOrder:
                 onUpdateBrowser();
                 break;

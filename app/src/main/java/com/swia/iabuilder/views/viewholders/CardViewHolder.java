@@ -14,6 +14,8 @@ import com.squareup.picasso.Picasso;
 import com.swia.datasets.cards.Card;
 import com.swia.iabuilder.R;
 
+import java.util.Comparator;
+
 public class CardViewHolder extends CollectionViewHolder<CardViewHolder.CardEntry> {
 
     private final int ratio;
@@ -132,6 +134,17 @@ public class CardViewHolder extends CollectionViewHolder<CardViewHolder.CardEntr
                 }
             }
             return diff;
+        }
+
+        public static Comparator<CardEntry> getComparator(String field) {
+            switch (field) {
+                case "Cost":
+                    return CardViewHolder.CardEntry::compareByCost;
+                case "Name":
+                    return CardViewHolder.CardEntry::compareByName;
+                default:
+                    return CardViewHolder.CardEntry::compareTo;
+            }
         }
     }
 }

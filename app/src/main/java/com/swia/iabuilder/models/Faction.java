@@ -1,5 +1,6 @@
 package com.swia.iabuilder.models;
 
+import com.swia.datasets.cards.Size;
 import com.swia.iabuilder.R;
 import com.swia.datasets.cards.Affiliation;
 
@@ -25,14 +26,22 @@ public enum Faction {
     }
 
     public Affiliation getAffiliation() {
-        return Affiliation.valueOf(name.toUpperCase());
+        return Affiliation.fromString(name);
     }
 
     public static Faction fromAffiliation(Affiliation affiliation) {
         if (affiliation == Affiliation.NEUTRAL) {
             return null;
         } else {
-            return Faction.valueOf(affiliation.toString().toUpperCase());
+            return Faction.fromString(affiliation.toString());
+        }
+    }
+
+    private static Faction fromString(String faction) {
+        try {
+            return Faction.valueOf(faction.toUpperCase());
+        } catch (IllegalArgumentException | NullPointerException e) {
+            return null;
         }
     }
 }

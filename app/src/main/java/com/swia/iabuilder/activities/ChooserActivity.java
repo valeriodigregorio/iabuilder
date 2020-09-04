@@ -67,59 +67,40 @@ public class ChooserActivity extends AppCompatActivity implements CollectionView
         recyclerView.refresh();
     }
 
+    private void createSpinner(int id, int resource, boolean enabled) {
+        Spinner spinner = findViewById(id);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                this, resource, R.layout.spinner_layout);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setEnabled(enabled);
+        spinner.setVisibility(enabled ? View.VISIBLE : View.GONE);
+        ChooserRecyclerView recyclerView = findViewById(R.id.rclChooser);
+        spinner.setOnItemSelectedListener(recyclerView);
+        spinner.setSelection(0);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chooser);
-        ChooserRecyclerView recyclerView = findViewById(R.id.rclChooser);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        createSpinner(R.id.spnTrait, R.array.traits, false);
+        createSpinner(R.id.spnRestriction, R.array.restrictions, false);
+        createSpinner(R.id.spnOrder, R.array.orders, true);
+
         CardType cardType = getCardType();
-        Spinner spinner = findViewById(R.id.spnFilter);
-        ArrayAdapter<CharSequence> adapter = null;
         switch (cardType) {
             case DEPLOYMENT:
-                adapter = ArrayAdapter.createFromResource(
-                        this, R.array.traits, android.R.layout.simple_spinner_item);
+                createSpinner(R.id.spnTrait, R.array.traits, true);
                 break;
             case COMMAND:
-                adapter = ArrayAdapter.createFromResource(
-                        this, R.array.restrictions, android.R.layout.simple_spinner_item);
+                createSpinner(R.id.spnRestriction, R.array.restrictions, true);
                 break;
             default:
         }
-
-        if (adapter != null) {
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(adapter);
-            spinner.setVisibility(View.VISIBLE);
-            spinner.setOnItemSelectedListener(recyclerView);
-        } else {
-            spinner.setVisibility(View.GONE);
-        }
-
-        spinner = findViewById(R.id.spnOrder);
-        switch (cardType) {
-            case DEPLOYMENT:
-            case COMMAND:
-                adapter = ArrayAdapter.createFromResource(
-                        this, R.array.orders, android.R.layout.simple_spinner_item);
-                break;
-            default:
-        }
-
-        if (adapter != null) {
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(adapter);
-            spinner.setVisibility(View.VISIBLE);
-            spinner.setOnItemSelectedListener(recyclerView);
-        } else {
-            spinner.setVisibility(View.GONE);
-        }
-
-        recyclerView.setOnItemClickListener(this);
-        recyclerView.setOnUpdatedListener(this);
 
         int columns;
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -128,6 +109,9 @@ public class ChooserActivity extends AppCompatActivity implements CollectionView
             columns = SettingsManager.getIntSetting(getString(R.string.setting_card_chooser_columns_portrait));
         }
 
+        ChooserRecyclerView recyclerView = findViewById(R.id.rclChooser);
+        recyclerView.setOnItemClickListener(this);
+        recyclerView.setOnUpdatedListener(this);
         recyclerView.initialize(getArmyId(), cardType);
         recyclerView.setColumns(columns);
     }
