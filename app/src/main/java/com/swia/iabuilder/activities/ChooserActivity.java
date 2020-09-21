@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.text.Layout;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -67,17 +69,22 @@ public class ChooserActivity extends AppCompatActivity implements CollectionView
         recyclerView.refresh();
     }
 
-    private void createSpinner(int id, int resource, boolean enabled) {
-        Spinner spinner = findViewById(id);
+    private void createSpinner(int layoutId, int spinnerId, int resource, boolean enabled) {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, resource, R.layout.spinner_layout);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        Spinner spinner = findViewById(spinnerId);
         spinner.setAdapter(adapter);
-        spinner.setEnabled(enabled);
-        spinner.setVisibility(enabled ? View.VISIBLE : View.GONE);
         ChooserRecyclerView recyclerView = findViewById(R.id.rclChooser);
         spinner.setOnItemSelectedListener(recyclerView);
         spinner.setSelection(0);
+        spinner.setEnabled(enabled);
+        spinner.setVisibility(enabled ? View.VISIBLE : View.GONE);
+
+        LinearLayout layout = findViewById(layoutId);
+        layout.setEnabled(enabled);
+        layout.setVisibility(enabled ? View.VISIBLE : View.GONE);
     }
 
     @Override
@@ -87,17 +94,17 @@ public class ChooserActivity extends AppCompatActivity implements CollectionView
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        createSpinner(R.id.spnTrait, R.array.traits, false);
-        createSpinner(R.id.spnRestriction, R.array.restrictions, false);
-        createSpinner(R.id.spnOrder, R.array.orders, true);
+        createSpinner(R.id.lyoTrait, R.id.spnTrait, R.array.traits, false);
+        createSpinner(R.id.lyoRestriction, R.id.spnRestriction, R.array.restrictions, false);
+        createSpinner(R.id.lyoOrder, R.id.spnOrder, R.array.orders, true);
 
         CardType cardType = getCardType();
         switch (cardType) {
             case DEPLOYMENT:
-                createSpinner(R.id.spnTrait, R.array.traits, true);
+                createSpinner(R.id.lyoTrait, R.id.spnTrait, R.array.traits, true);
                 break;
             case COMMAND:
-                createSpinner(R.id.spnRestriction, R.array.restrictions, true);
+                createSpinner(R.id.lyoRestriction, R.id.spnRestriction, R.array.restrictions, true);
                 break;
             default:
         }

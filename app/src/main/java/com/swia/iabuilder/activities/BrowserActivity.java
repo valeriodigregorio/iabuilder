@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,16 +37,21 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
         context.startActivity(intent);
     }
 
-    private void createSpinner(int id, int resource, boolean enabled) {
-        Spinner spinner = findViewById(id);
+    private void createSpinner(int layoutId, int spinnerId, int resource, boolean enabled) {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, resource, R.layout.spinner_layout);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        Spinner spinner = findViewById(spinnerId);
         spinner.setAdapter(adapter);
-        spinner.setEnabled(enabled);
-        spinner.setVisibility(enabled ? View.VISIBLE : View.GONE);
         spinner.setOnItemSelectedListener(this);
         spinner.setSelection(0);
+        spinner.setEnabled(enabled);
+        spinner.setVisibility(enabled ? View.VISIBLE : View.GONE);
+
+        LinearLayout layout = findViewById(layoutId);
+        layout.setEnabled(enabled);
+        layout.setVisibility(enabled ? View.VISIBLE : View.GONE);
     }
 
     private String getSpinnerValue(int spinnerId) {
@@ -102,12 +108,12 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
     }
 
     private void onUpdateSpinners() {
-        createSpinner(R.id.spnAffiliation, R.array.affiliations, false);
-        createSpinner(R.id.spnFigureType, R.array.figure_types, false);
-        createSpinner(R.id.spnFigureSize, R.array.figure_sizes, false);
-        createSpinner(R.id.spnOrder, R.array.orders, false);
-        createSpinner(R.id.spnTrait, R.array.disabled, false);
-        createSpinner(R.id.spnRestriction, R.array.disabled, false);
+        createSpinner(R.id.lyoAffiliation, R.id.spnAffiliation, R.array.affiliations, false);
+        createSpinner(R.id.lyoFigureType, R.id.spnFigureType, R.array.figure_types, false);
+        createSpinner(R.id.lyoFigureSize, R.id.spnFigureSize, R.array.figure_sizes, false);
+        createSpinner(R.id.lyoOrder, R.id.spnOrder, R.array.orders, false);
+        createSpinner(R.id.lyoTrait, R.id.spnTrait, R.array.traits, false);
+        createSpinner(R.id.lyoRestriction, R.id.spnRestriction, R.array.restrictions, false);
 
         CardType cardType = getCardType();
         if (cardType == null) {
@@ -116,16 +122,16 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
 
         switch (cardType) {
             case DEPLOYMENT:
-                createSpinner(R.id.spnAffiliation, R.array.affiliations, true);
-                createSpinner(R.id.spnFigureType, R.array.figure_types, true);
-                createSpinner(R.id.spnFigureSize, R.array.figure_sizes, true);
-                createSpinner(R.id.spnOrder, R.array.orders, true);
+                createSpinner(R.id.lyoAffiliation, R.id.spnAffiliation, R.array.affiliations, true);
+                createSpinner(R.id.lyoFigureType, R.id.spnFigureType, R.array.figure_types, true);
+                createSpinner(R.id.lyoFigureSize, R.id.spnFigureSize, R.array.figure_sizes, true);
+                createSpinner(R.id.lyoOrder, R.id.spnOrder, R.array.orders, true);
             case COMPANION:
-                createSpinner(R.id.spnTrait, R.array.traits, true);
+                createSpinner(R.id.lyoTrait, R.id.spnTrait, R.array.traits, true);
                 break;
             case COMMAND:
-                createSpinner(R.id.spnOrder, R.array.orders, true);
-                createSpinner(R.id.spnRestriction, R.array.restrictions, true);
+                createSpinner(R.id.lyoOrder, R.id.spnOrder, R.array.orders, true);
+                createSpinner(R.id.lyoRestriction, R.id.spnRestriction, R.array.restrictions, true);
                 break;
             case FORM:
             default:
@@ -172,9 +178,9 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browser);
 
-        createSpinner(R.id.spnCardSystem, R.array.card_systems, true);
-        createSpinner(R.id.spnCardType, R.array.card_types, true);
-        createSpinner(R.id.spnBox, R.array.boxes, true);
+        createSpinner(R.id.lyoCardSystem, R.id.spnCardSystem, R.array.card_systems, true);
+        createSpinner(R.id.lyoCardType, R.id.spnCardType, R.array.card_types, true);
+        createSpinner(R.id.lyoBox, R.id.spnBox, R.array.boxes, true);
 
         EditText filter = findViewById(R.id.edtFilter);
         filter.addTextChangedListener(this);

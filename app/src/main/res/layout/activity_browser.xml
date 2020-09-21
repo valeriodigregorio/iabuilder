@@ -14,122 +14,298 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_padding"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_padding"
                 android:orientation="horizontal" >
 
-                <Spinner
-                    android:id="@+id/spnCardSystem"
+                <LinearLayout
+                    android:id="@+id/lyoCardSystem"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
+                    android:orientation="vertical">
 
-                <Spinner
-                    android:id="@+id/spnCardType"
+                    <TextView
+                        android:id="@+id/txtCardSystem"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/card_system"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                    <Spinner
+                        android:id="@+id/spnCardSystem"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyoCardType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtCardType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/card_type"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                    <Spinner
+                        android:id="@+id/spnCardType"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_padding"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/lyoBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/box"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                    <Spinner
+                        android:id="@+id/spnBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_padding"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/lyoAffiliation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtAffiliation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/affiliation"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                    <Spinner
+                        android:id="@+id/spnAffiliation"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyoTrait"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtTrait"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/trait"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                    <Spinner
+                        android:id="@+id/spnTrait"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyoRestriction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtRestriction"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/restriction"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                    <Spinner
+                        android:id="@+id/spnRestriction"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/layout_padding"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/lyoFigureType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtFigureType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/figure_type"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                    <Spinner
+                        android:id="@+id/spnFigureType"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyoFigureSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtFigureSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/figure_size"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                    <Spinner
+                        android:id="@+id/spnFigureSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lyoOrder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/order"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                    <Spinner
+                        android:id="@+id/spnOrder"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/lyoFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="4"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
+                    android:orientation="vertical">
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/txtFilter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/search"
+                        android:textSize="@dimen/text_small_size"
+                        android:paddingStart="@dimen/layout_padding"
+                        android:paddingEnd="@dimen/layout_padding" />
 
-                <Spinner
-                    android:id="@+id/spnBox"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
+                    <EditText
+                        android:id="@+id/edtFilter"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:imeOptions="actionDone"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/toolbar_spinner_height"
+                        android:layout_marginStart="@dimen/layout_padding"
+                        android:layout_marginEnd="@dimen/layout_padding" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <Spinner
-                    android:id="@+id/spnAffiliation"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
-
-                <Spinner
-                    android:id="@+id/spnTrait"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
-
-                <Spinner
-                    android:id="@+id/spnRestriction"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <Spinner
-                    android:id="@+id/spnFigureType"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
-
-                <Spinner
-                    android:id="@+id/spnFigureSize"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
-
-                <Spinner
-                    android:id="@+id/spnOrder"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:paddingStart="@dimen/layout_padding"
-                    android:paddingEnd="@dimen/layout_padding" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <EditText
-                    android:id="@+id/edtFilter"
-                    android:maxLines="1"
-                    android:inputType="text"
-                    android:imeOptions="actionDone"
-                    android:layout_weight="4"
-                    android:layout_width="0dp"
-                    android:layout_height="@dimen/toolbar_spinner_height"
-                    android:layout_marginStart="@dimen/layout_padding"
-                    android:layout_marginEnd="@dimen/layout_padding" />
+                </LinearLayout>
 
             </LinearLayout>
 

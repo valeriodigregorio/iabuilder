@@ -11,8 +11,14 @@
     <string name="card_type">Card Type</string>
     <string name="faction">Faction</string>
     <string name="affiliation">Affiliation</string>
+    <string name="trait">Trait</string>
+    <string name="restriction">Restriction</string>
     <string name="filter">Filter</string>
     <string name="order">Order</string>
+    <string name="box">Box</string>
+    <string name="figure_type">Figure Type</string>
+    <string name="figure_size">Figure Size</string>
+    <string name="search">Search</string>
     <string name="shortlist">Shortlist</string>
 
     <string-array name="card_systems">
@@ -83,10 +89,6 @@
     <string-array name="orders">
         <item>Cost</item>
         <item>Name</item>
-    </string-array>
-
-    <string-array name="disabled">
-        <item>-</item>
     </string-array>
 
     <string-array name="figure_types">
