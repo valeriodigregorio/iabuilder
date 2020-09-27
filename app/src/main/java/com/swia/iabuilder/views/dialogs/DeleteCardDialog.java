@@ -22,8 +22,8 @@ public class DeleteCardDialog implements DialogInterface.OnClickListener {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context)
                 .setTitle(context.getResources().getString(R.string.dialog_card_removal_title))
                 .setMessage(context.getResources().getString(R.string.dialog_card_removal_message));
-        dialogBuilder.setPositiveButton(android.R.string.yes, this);
-        dialogBuilder.setNegativeButton(android.R.string.no, this);
+        dialogBuilder.setPositiveButton(android.R.string.ok, this);
+        dialogBuilder.setNegativeButton(android.R.string.cancel, this);
 
         dialog = dialogBuilder.create();
     }

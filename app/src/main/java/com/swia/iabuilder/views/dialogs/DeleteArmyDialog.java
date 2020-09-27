@@ -22,8 +22,8 @@ public class DeleteArmyDialog implements DialogInterface.OnClickListener {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context)
                 .setTitle(context.getResources().getString(R.string.dialog_army_delete_title))
                 .setMessage(context.getResources().getString(R.string.dialog_army_delete_message));
-        dialogBuilder.setPositiveButton(android.R.string.yes, this);
-        dialogBuilder.setNegativeButton(android.R.string.no, this);
+        dialogBuilder.setPositiveButton(android.R.string.ok, this);
+        dialogBuilder.setNegativeButton(android.R.string.cancel, this);
 
         dialog = dialogBuilder.create();
     }

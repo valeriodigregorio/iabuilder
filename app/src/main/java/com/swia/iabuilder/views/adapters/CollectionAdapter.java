@@ -87,6 +87,7 @@ public abstract class CollectionAdapter<T, VH extends CollectionViewHolder<T>> e
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public void onClick(View view) {
         if (listener != null) {
             listener.onItemClicked((VH) view.getTag());
@@ -94,6 +95,7 @@ public abstract class CollectionAdapter<T, VH extends CollectionViewHolder<T>> e
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public boolean onLongClick(View view) {
         boolean consumed = false;
         if (listener != null) {

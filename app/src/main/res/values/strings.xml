@@ -429,5 +429,10 @@
         - Added "Browse cards" menu option in main screen\n
         - Card browser functionality can be used to search and display cards by applying a wide range of filters
     </string>
+    <string name="dialog_release_notes_version_39">
+        Version 2.2.0\n
+        - Changes for IACP v4.2\n
+        - Improved UI for card browser and card chooser
+    </string>
 
 </resources>

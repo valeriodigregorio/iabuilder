@@ -15,7 +15,7 @@ public class ReleaseNotesDialog implements DialogInterface.OnClickListener {
     private final Dialog dialog;
     private final String releaseNotes;
 
-    public ReleaseNotesDialog(Context context, int old_release, int new_release) {
+    public ReleaseNotesDialog(Context context, long old_release, long new_release) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(context);
         dialogBuilder.setView(R.layout.dialog_release_notes);
         dialogBuilder.setTitle(context.getResources().getString(R.string.dialog_release_notes_title));
@@ -23,7 +23,7 @@ public class ReleaseNotesDialog implements DialogInterface.OnClickListener {
 
         String packageName = context.getPackageName();
         StringBuilder builder = new StringBuilder();
-        for (int i = new_release; i > old_release; i--) {
+        for (long i = new_release; i > old_release; i--) {
             if (i < new_release) {
                 builder.append("\n");
             }

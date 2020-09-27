@@ -9,6 +9,7 @@ public class ConfigStore {
 
     private static final String CONFIG_SHOW_DISABLED = "config_show_disabled";
     private static final String CONFIG_CURRENT_RELEASE = "config_current_release";
+    private static final String CONFIG_CURRENT_RELEASE_LONG = "config_current_release_long";
 
     private static SharedPreferences preferences = null;
 
@@ -22,8 +23,9 @@ public class ConfigStore {
         return preferences.getBoolean(CONFIG_SHOW_DISABLED, false);
     }
 
-    public static int getCurrentRelease() {
-        return preferences.getInt(CONFIG_CURRENT_RELEASE, 0);
+    public static long getCurrentRelease() {
+        int defval = preferences.getInt(CONFIG_CURRENT_RELEASE, 0);
+        return preferences.getLong(CONFIG_CURRENT_RELEASE_LONG, defval);
     }
 
     public static void setShowDisabled(boolean showDisabled) {
@@ -32,9 +34,9 @@ public class ConfigStore {
         editor.apply();
     }
 
-    public static void setCurrentRelease(int code) {
+    public static void setCurrentRelease(long code) {
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putInt(CONFIG_CURRENT_RELEASE, code);
+        editor.putLong(CONFIG_CURRENT_RELEASE_LONG, code);
         editor.apply();
     }
 }

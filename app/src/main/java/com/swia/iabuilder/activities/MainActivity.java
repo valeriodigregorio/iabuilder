@@ -20,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.content.pm.PackageInfoCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.android.volley.Request;
@@ -87,10 +88,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    private int getCurrentVersionCode() {
+    private long getCurrentVersionCode() {
         try {
             PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
-            return pInfo.versionCode;
+            return PackageInfoCompat.getLongVersionCode(pInfo);
         } catch (PackageManager.NameNotFoundException e) {
             Log.e(TAG, Objects.requireNonNull(e.getMessage()));
             return 0;
@@ -103,8 +104,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 response -> {
                     try {
                         JSONObject version = response.getJSONObject("version");
-                        int code = version.getInt("code");
-                        int current = getCurrentVersionCode();
+                        long code = version.getLong("code");
+                        long current = getCurrentVersionCode();
                         if (code > current) {
                             String name = version.getString("name");
                             String message = getString(R.string.main_update_available, name);
@@ -209,8 +210,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showReleaseNotes() {
-        int current = getCurrentVersionCode();
-        int previous = ConfigStore.getCurrentRelease();
+        long current = getCurrentVersionCode();
+        long previous = ConfigStore.getCurrentRelease();
         previous = previous == 0 ? current - 1 : previous;
         if (previous != current) {
             ReleaseNotesDialog dialog = new ReleaseNotesDialog(this, previous, current);
