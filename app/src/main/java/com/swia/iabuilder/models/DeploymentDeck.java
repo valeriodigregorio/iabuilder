@@ -18,7 +18,6 @@ public class DeploymentDeck extends Deck {
 
     public static final int MAX_POINTS = 40;
     private static final int CROSS_TRAINING = 24;
-    private static final int SABINE_WREN = 180;
     private static final int MAUL = 152;
     private static final int IACP_4LOM = 190;
     private static final int IACP_DARKSABER = 202;
@@ -30,9 +29,7 @@ public class DeploymentDeck extends Deck {
     private HashSet<String> skirmishUpgradesRestrictions = new HashSet<>();
     private boolean anyNonUnique = false;
     private boolean anyNonSpectre = false;
-    private boolean hasHunter = false;
     private boolean hasMaul = false;
-    private boolean hasSabine = false;
     private boolean hasDarksaber = false;
 
     public DeploymentDeck() {
@@ -113,9 +110,7 @@ public class DeploymentDeck extends Deck {
         skirmishUpgradesRestrictions = new HashSet<>();
         anyNonUnique = false;
         anyNonSpectre = false;
-        hasHunter = false;
         hasMaul = false;
-        hasSabine = false;
         hasDarksaber = false;
         for (Card card : getCards()) {
             updateCommandDeckRestrictions(card);
@@ -162,11 +157,6 @@ public class DeploymentDeck extends Deck {
                         String affiliation = deploymentCard.getAffiliation().getName();
                         commandDeckRestrictions.add(affiliation + " Force User");
                         break;
-                    case "Hunter":
-                        if (deploymentCard.getId() != SABINE_WREN) {
-                            hasHunter = true;
-                        }
-                        break;
                 }
             } else {
                 isUpdate = true;
@@ -192,13 +182,9 @@ public class DeploymentDeck extends Deck {
                     commandDeckRestrictions.add("Trooper");
                     commandDeckRestrictions.add("Vehicle");
                     commandDeckRestrictions.add("Wookiee");
-                    hasHunter = true;
                     break;
                 case MAUL:
                     hasMaul = true;
-                    break;
-                case SABINE_WREN:
-                    hasSabine = true;
                     break;
                 case IACP_DARKSABER:
                     hasDarksaber = true;
@@ -206,22 +192,13 @@ public class DeploymentDeck extends Deck {
             }
         }
 
-        if (hasDarksaber) {
-            if (hasMaul) {
-                String affiliation = Affiliation.IMPERIAL.getName();
-                commandDeckRestrictions.add(affiliation);
-                commandDeckRestrictions.add("Any " + affiliation + " Figure");
-                commandDeckRestrictions.add(affiliation + " Force User");
-                commandDeckRestrictions.add(affiliation + " Maul");
-            }
-            if (hasSabine) {
-                commandDeckRestrictions.add("Brawler");
-                if (!hasHunter && !hasMaul) {
-                    commandDeckRestrictions.remove("Hunter");
-                }
-            }
+        if (hasDarksaber && hasMaul) {
+            String affiliation = Affiliation.IMPERIAL.getName();
+            commandDeckRestrictions.add(affiliation);
+            commandDeckRestrictions.add("Any " + affiliation + " Figure");
+            commandDeckRestrictions.add(affiliation + " Force User");
+            commandDeckRestrictions.add(affiliation + " Maul");
             hasMaul = false;
-            hasSabine = false;
         }
 
         if (!isUpdate) {
