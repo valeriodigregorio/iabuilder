@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -30,7 +31,7 @@ import com.swia.iabuilder.views.viewholders.CollectionViewHolder;
 
 import java.util.ArrayList;
 
-public class BrowserActivity extends AppCompatActivity implements CollectionViewHolder.OnItemClickListener<CardViewHolder.CardEntry>, AdapterView.OnItemSelectedListener, TextWatcher {
+public class BrowserActivity extends AppCompatActivity implements CollectionViewHolder.OnItemClickListener<CardViewHolder.CardEntry>, AdapterView.OnItemSelectedListener, TextWatcher, View.OnClickListener {
 
     public static void show(Context context) {
         Intent intent = new Intent(context, BrowserActivity.class);
@@ -182,6 +183,9 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
         createSpinner(R.id.lyoCardType, R.id.spnCardType, R.array.card_types, true);
         createSpinner(R.id.lyoBox, R.id.spnBox, R.array.boxes, true);
 
+        Button button = findViewById(R.id.btnFilter);
+        button.setOnClickListener(this);
+
         EditText filter = findViewById(R.id.edtFilter);
         filter.addTextChangedListener(this);
 
@@ -245,5 +249,11 @@ public class BrowserActivity extends AppCompatActivity implements CollectionView
     @Override
     public void afterTextChanged(Editable s) {
         onUpdateBrowser();
+    }
+
+    @Override
+    public void onClick(View v) {
+        EditText filter = findViewById(R.id.edtFilter);
+        filter.setText("");
     }
 }
