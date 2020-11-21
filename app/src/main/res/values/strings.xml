@@ -434,5 +434,10 @@
         - Changes for IACP v4.2\n
         - Improved UI for card browser and card chooser
     </string>
+    <string name="dialog_release_notes_version_40">
+        Version 2.3.0\n
+        - Changes for IACP v5.0 spoilers: Cassian Andor, K-2SO, Blend In\n
+        - Added clear button for search box in card browser
+    </string>
 
 </resources>
