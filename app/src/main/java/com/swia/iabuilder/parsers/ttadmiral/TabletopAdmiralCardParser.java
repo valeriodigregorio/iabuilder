@@ -250,27 +250,29 @@ public class TabletopAdmiralCardParser implements CardParser<Integer> {
             map.put(189, 218); // Scout Trooper (IACP)
             map.put(190, 209); // 4-LOM (IACP)
             map.put(191, 212); // Zuckuss (IACP)
-            map.put(16, 224); // Bossk
+            map.put(16, 224); // Bossk (IACP)
             map.put(32, 231); // E-Web Engineer [Elite]
-            map.put(44, 232); // General Sorin
-            map.put(192, 227); // IG-11
-            map.put(73, 233); // Lando Calrissian
-            map.put(77, 234); // Loku Kanoloa
-            map.put(193, 228); // The Mandalorian
-            map.put(123, 241); // Trandoshan Hunter [Elite]
-            map.put(194, 237); // Overwatch
-            map.put(195, 230); // Clan of Two
-            map.put(196, 235); // Shoretrooper [Elite]
-            map.put(197, 236); // Mortar Trooper [Elite]
-            map.put(198, 223); // AT-RT [Elite]
-            map.put(100, 239); // Rebel Saboteur [Elite]
-            map.put(200, 226); // Director Krennic
-            map.put(201, 225); // Jyn Erso
-            map.put(202, 240); // The Darksaber
-            map.put(4, 222); // Agent Blaise
+            map.put(44, 232); // General Sorin (IACP)
+            map.put(192, 227); // IG-11 (IACP)
+            map.put(73, 233); // Lando Calrissian (IACP)
+            map.put(77, 234); // Loku Kanoloa (IACP)
+            map.put(193, 228); // The Mandalorian (IACP)
+            map.put(123, 241); // Trandoshan Hunter [Elite] (IACP)
+            map.put(194, 237); // Overwatch (IACP)
+            map.put(195, 230); // Clan of Two (IACP)
+            map.put(196, 235); // Shoretrooper [Elite] (IACP)
+            map.put(197, 236); // Mortar Trooper [Elite] (IACP)
+            map.put(198, 223); // AT-RT [Elite] (IACP)
+            map.put(100, 239); // Rebel Saboteur [Elite] (IACP)
+            map.put(200, 226); // Director Krennic (IACP)
+            map.put(201, 225); // Jyn Erso (IACP)
+            map.put(202, 240); // The Darksaber (IACP)
+            map.put(4, 222); // Agent Blaise (IACP)
             map.put(60, 221); // ISB Infiltrator [Elite] (IACP)
-            map.put(203, 238); // Rebel Pathfinder [Elite]
-            map.put(132, 242); // Verena Talos
+            map.put(203, 238); // Rebel Pathfinder [Elite] (IACP)
+            map.put(132, 242); // Verena Talos (IACP)
+            map.put(204, 243); // Cassian Andor (IACP)
+            map.put(205, 244); // K-2SO (IACP)
         }
 
         // FFG - COMMAND CARDS: IAB => TTA
@@ -527,6 +529,7 @@ public class TabletopAdmiralCardParser implements CardParser<Integer> {
             map.put(235, 251); // Whistling Birds (IACP)
             map.put(236, 248); // Built on Hope (IACP)
             map.put(237, 249); // Deploy the Garrison! (IACP)
+            map.put(238, 252); // Blend In (IACP)
         }
 
         // DEPLOYMENT CARDS: TTA => IAB
@@ -750,27 +753,29 @@ public class TabletopAdmiralCardParser implements CardParser<Integer> {
             map.put(219, 188); // Yoda (IACP)
             map.put(220, 126); // Tusken Raider [Elite] (IACP)
             map.put(221, 60); // ISB Infiltrator [Elite] (IACP)
-            map.put(222, 4); // Agent Blaise
-            map.put(223, 198); // AT-RT [Elite]
-            map.put(224, 16); // Bossk
-            map.put(225, 201); // Jyn Erso
-            map.put(226, 200); // Director Krennic
-            map.put(227, 192); // IG-11
-            map.put(228, 193); // The Mandalorian
-            map.put(229, null); // The Child
-            map.put(230, 195); // Clan of Two
-            map.put(231, 32); // E-Web Engineer [Elite]
-            map.put(232, 44); // General Sorin
-            map.put(233, 73); // Lando Calrissian
-            map.put(234, 77); // Loku Kanoloa
-            map.put(235, 196); // Shoretrooper [Elite]
-            map.put(236, 197); // Mortar Trooper [Elite]
-            map.put(237, 194); // Overwatch
-            map.put(238, 203); // Rebel Pathfinder [Elite]
-            map.put(239, 100); // Rebel Saboteur [Elite]
-            map.put(240, 202); // The Darksaber
-            map.put(241, 123); // Trandoshan Hunter [Elite]
-            map.put(242, 132); // Verena Talos
+            map.put(222, 4); // Agent Blaise (IACP)
+            map.put(223, 198); // AT-RT [Elite] (IACP)
+            map.put(224, 16); // Bossk (IACP)
+            map.put(225, 201); // Jyn Erso (IACP)
+            map.put(226, 200); // Director Krennic (IACP)
+            map.put(227, 192); // IG-11 (IACP)
+            map.put(228, 193); // The Mandalorian (IACP)
+            map.put(229, null); // The Child (IACP)
+            map.put(230, 195); // Clan of Two (IACP)
+            map.put(231, 32); // E-Web Engineer [Elite] (IACP)
+            map.put(232, 44); // General Sorin (IACP)
+            map.put(233, 73); // Lando Calrissian (IACP)
+            map.put(234, 77); // Loku Kanoloa (IACP)
+            map.put(235, 196); // Shoretrooper [Elite] (IACP)
+            map.put(236, 197); // Mortar Trooper [Elite] (IACP)
+            map.put(237, 194); // Overwatch (IACP)
+            map.put(238, 203); // Rebel Pathfinder [Elite] (IACP)
+            map.put(239, 100); // Rebel Saboteur [Elite] (IACP)
+            map.put(240, 202); // The Darksaber (IACP)
+            map.put(241, 123); // Trandoshan Hunter [Elite] (IACP)
+            map.put(242, 132); // Verena Talos (IACP)
+            map.put(243, 204); // Cassian Andor (IACP)
+            map.put(244, 205); // K-2SO (IACP)
         }
 
         // COMMAND CARDS: TTA => IAB
@@ -1026,6 +1031,7 @@ public class TabletopAdmiralCardParser implements CardParser<Integer> {
             map.put(249, 237); // Deploy the Garrison! (IACP)
             map.put(250, 234); // Guild Programming (IACP)
             map.put(251, 235); // Whistling Birds (IACP)
+            map.put(252, 238); // Blend In (IACP)
         }
     }
 
