@@ -1,8 +1,10 @@
 package com.swia.iabuilder.parsers.vassal;
 
 import com.swia.datasets.cards.CardType;
+import com.swia.datasets.cards.CommandCard;
 import com.swia.iabuilder.models.Army;
 import com.swia.iabuilder.models.Faction;
+import com.swia.iabuilder.models.comparators.DeploymentCardSafeComparator;
 import com.swia.iavd.IavdFile;
 import com.swia.iavd.model.Affiliation;
 import com.swia.iavd.model.Card;
@@ -13,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class VassalParser {
@@ -64,27 +67,36 @@ public class VassalParser {
         return com.swia.datasets.cards.CardSystem.FFG;
     }
 
-    private static CardType getCardType(Card card) {
-        if (card instanceof com.swia.iavd.model.DeploymentCard) {
-            return CardType.DEPLOYMENT;
-        } else if (card instanceof com.swia.iavd.model.CommandCard) {
-            return CardType.COMMAND;
-        } else {
-            return null;
-        }
-    }
-
     public static Army load(InputStream stream) throws IOException {
         List<Card> cards = IavdFile.load(stream);
         com.swia.datasets.cards.CardSystem cardSystem = getCardSystem(cards);
         Faction faction = getFaction(cards);
         Army army = new Army(cardSystem, faction, "", 0, 0);
         boolean valid = true;
+        ArrayList<com.swia.datasets.cards.DeploymentCard> deploymentCards = new ArrayList<>();
+        ArrayList<com.swia.datasets.cards.CommandCard> commandCards = new ArrayList<>();
         for (Card card : cards) {
-            com.swia.datasets.cards.Card c = getCardType(card).getCard(cardSystem, card.getId());
-            if (c != null) {
-                valid &= army.add(c);
+            switch (card.getCardType()) {
+                case COMMAND: {
+                    com.swia.datasets.cards.Card c = CardType.COMMAND.getCard(cardSystem, card.getId());
+                    if (c != null) {
+                        commandCards.add((CommandCard) c);
+                    }
+                }
+                case DEPLOYMENT: {
+                    com.swia.datasets.cards.Card c = CardType.DEPLOYMENT.getCard(cardSystem, card.getId());
+                    if (c != null) {
+                        deploymentCards.add((com.swia.datasets.cards.DeploymentCard) c);
+                    }
+                }
             }
+        }
+        Collections.sort(deploymentCards, DeploymentCardSafeComparator.Instance);
+        for (com.swia.datasets.cards.DeploymentCard card : deploymentCards) {
+            valid &= army.add(card);
+        }
+        for (com.swia.datasets.cards.CommandCard card : commandCards) {
+            valid &= army.add(card);
         }
         return valid ? army : null;
     }
@@ -92,11 +104,11 @@ public class VassalParser {
     public static void save(OutputStream stream, Army army) throws IOException {
         List<Card> cards = new ArrayList<>();
         CardSystem cardSystem = CardSystem.valueOf(army.getCardSystem().toString().toUpperCase());
-        for (com.swia.datasets.cards.Card card : army.getCards(CardType.DEPLOYMENT)) {
+        for (com.swia.datasets.cards.Card card : army.getCards(com.swia.datasets.cards.CardType.DEPLOYMENT)) {
             Card c = IavdFile.getCard(cardSystem, card.getStringId());
             cards.add(c);
         }
-        for (com.swia.datasets.cards.Card card : army.getCards(CardType.COMMAND)) {
+        for (com.swia.datasets.cards.Card card : army.getCards(com.swia.datasets.cards.CardType.COMMAND)) {
             Card c = IavdFile.getCard(cardSystem, card.getStringId());
             cards.add(c);
         }
