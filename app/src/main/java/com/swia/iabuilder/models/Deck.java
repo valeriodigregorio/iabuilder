@@ -75,7 +75,14 @@ public abstract class Deck {
     public abstract boolean isValid(Card card, Army army);
 
     public boolean canAdd(Card card) {
-        return currentSize < sizeLimit && getCardCost(card) <= pointsLeft && isAllowed(card);
+        int cost = getCardCost(card);
+        if (card.getCardType() == CardType.DEPLOYMENT && cost > pointsLeft) {
+            DeploymentCard fix = ((DeploymentCard) card).getCardFix();
+            if (fix != null) {
+                cost += fix.getDeploymentCost();
+            }
+        }
+        return currentSize < sizeLimit && cost <= pointsLeft && isAllowed(card);
     }
 
     public boolean isAllowed(Card card) {
@@ -90,8 +97,15 @@ public abstract class Deck {
 
     public void add(Card card) {
         if (card.getCardType() == cardType) {
+            int cost = getCardCost(card);
+            if (card.getCardType() == CardType.DEPLOYMENT && cost > pointsLeft) {
+                DeploymentCard fix = ((DeploymentCard) card).getCardFix();
+                if (fix != null) {
+                    add(fix);
+                }
+            }
             cards.add(card);
-            pointsLeft -= getCardCost(card);
+            pointsLeft -= cost;
             currentSize++;
             Collections.sort(cards);
             counter.add(card);

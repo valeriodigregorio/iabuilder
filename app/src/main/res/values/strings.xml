@@ -439,5 +439,10 @@
         - Changes for IACP v5.0 spoilers: Cassian Andor, K-2SO, Blend In\n
         - Added clear button for search box in card browser
     </string>
+    <string name="dialog_release_notes_version_41">
+        Version 2.3.1\n
+        - Fixed bug importing Vassal files with card fixes\n
+        - Card fixes are added to the list together with the fixed card if there are not enough points for adding the fixed card alone
+    </string>
 
 </resources>
