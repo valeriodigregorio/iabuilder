@@ -21,7 +21,9 @@ public class DeploymentDeck extends Deck {
     private static final int MAUL = 152;
     private static final int IACP_4LOM = 190;
     private static final int IACP_DARKSABER = 202;
+    private static final int IACP_MARA_JADE = 206;
 
+    private Faction faction = null;
     private DeploymentCardConstraints constraints = null;
     private final CardUniqueNames uniqueNames = new CardUniqueNames();
 
@@ -37,6 +39,7 @@ public class DeploymentDeck extends Deck {
     }
 
     public void setFaction(Faction faction) {
+        this.faction = faction;
         constraints = new DeploymentCardConstraints(faction);
         clear();
     }
@@ -144,29 +147,7 @@ public class DeploymentDeck extends Deck {
             Collections.addAll(commandDeckRestrictions, c.getTraits());
         }
 
-        boolean isUpdate = false;
-        String[] traits = deploymentCard.getTraits();
-        for (String trait : traits) {
-            if (!trait.equals("Skirmish Upgrade")) {
-                commandDeckRestrictions.add(trait);
-                switch (trait) {
-                    case "Vehicle":
-                        commandDeckRestrictions.add("Any Ready Vehicle");
-                        break;
-                    case "Force User":
-                        String affiliation = deploymentCard.getAffiliation().getName();
-                        commandDeckRestrictions.add(affiliation + " Force User");
-                        break;
-                }
-            } else {
-                isUpdate = true;
-            }
-        }
-
-        if (deploymentCard.getId() == CROSS_TRAINING) {
-            commandDeckRestrictions.add("Spy");
-        }
-
+        Affiliation affiliation = deploymentCard.getAffiliation();
         if (deploymentCard.getCardSystem() == CardSystem.IACP) {
             switch (deploymentCard.getId()) {
                 case IACP_4LOM:
@@ -189,29 +170,68 @@ public class DeploymentDeck extends Deck {
                 case IACP_DARKSABER:
                     hasDarksaber = true;
                     break;
+                case IACP_MARA_JADE:
+                    affiliation = faction.getAffiliation();
+                    switch (affiliation) {
+                        case REBEL:
+                            commandDeckRestrictions.add("Guardian");
+                            break;
+                        case IMPERIAL:
+                            commandDeckRestrictions.add("Hunter");
+                            break;
+                        case MERCENARY:
+                            commandDeckRestrictions.add("Smuggler");
+                            break;
+                    }
+                    break;
+            }
+
+            if (hasDarksaber && hasMaul) {
+                String imperial = Affiliation.IMPERIAL.getName();
+                commandDeckRestrictions.add(imperial);
+                commandDeckRestrictions.add("Any " + imperial + " Figure");
+                commandDeckRestrictions.add(imperial + " Force User");
+                commandDeckRestrictions.add(imperial + " Maul");
+                hasMaul = false;
             }
         }
 
-        if (hasDarksaber && hasMaul) {
-            String affiliation = Affiliation.IMPERIAL.getName();
-            commandDeckRestrictions.add(affiliation);
-            commandDeckRestrictions.add("Any " + affiliation + " Figure");
-            commandDeckRestrictions.add(affiliation + " Force User");
-            commandDeckRestrictions.add(affiliation + " Maul");
-            hasMaul = false;
+        if (deploymentCard.getId() == CROSS_TRAINING) {
+            commandDeckRestrictions.add("Spy");
+        }
+
+        boolean isUpdate = false;
+        String[] traits = deploymentCard.getTraits();
+        for (String trait : traits) {
+            if (!trait.equals("Skirmish Upgrade")) {
+                commandDeckRestrictions.add(trait);
+                switch (trait) {
+                    case "Vehicle":
+                        commandDeckRestrictions.add("Any Ready Vehicle");
+                        break;
+                    case "Force User":
+                        commandDeckRestrictions.add(affiliation.getName() + " Force User");
+                        break;
+                    case "Creature":
+                        if (deploymentCard.getSize() == Size.LARGE) {
+                            commandDeckRestrictions.add("Large Creature");
+                        }
+                        break;
+                }
+            } else {
+                isUpdate = true;
+            }
         }
 
         if (!isUpdate) {
             if (deploymentCard.isUnique()) {
                 commandDeckRestrictions.add("Any Unique Figure");
+                commandDeckRestrictions.add(deploymentCard.getName());
+                commandDeckRestrictions.add(affiliation.getName() + " " + deploymentCard.getName());
             }
-            Affiliation affiliation = deploymentCard.getAffiliation();
             if (affiliation != Affiliation.NEUTRAL) {
                 commandDeckRestrictions.add(affiliation.getName());
                 commandDeckRestrictions.add("Any " + affiliation.getName() + " Figure");
-                if (deploymentCard.isUnique()) {
-                    commandDeckRestrictions.add(affiliation.getName() + " " + deploymentCard.getName());
-                }
             }
         }
     }

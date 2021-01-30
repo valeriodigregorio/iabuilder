@@ -3,7 +3,7 @@
 
     <!-- Card systems -->
     <string name="card_system_ffg">FFG</string>
-    <string name="card_system_iacp">IACP Season 4</string>
+    <string name="card_system_iacp">IACP Season 5</string>
 
     <!-- Content Descriptions -->
     <string name="qrcode">QR code</string>
@@ -443,6 +443,15 @@
         Version 2.3.1\n
         - Fixed bug importing Vassal files with card fixes\n
         - Card fixes are added to the list together with the fixed card if there are not enough points for adding the fixed card alone
+    </string>
+    <string name="dialog_release_notes_version_42">
+        Version 2.3.2\n
+        - Fixed bugs sharing files for Vassal v3.4.11 with IA Skirmish module v12.4.4
+    </string>
+    <string name="dialog_release_notes_version_43">
+        Version 2.3.3\n
+        - IACP Season 5 content\n
+        - Minor fixes
     </string>
 
 </resources>
