@@ -161,6 +161,7 @@
         <item>IACP Season 2</item>
         <item>IACP Season 3</item>
         <item>IACP Season 4</item>
+        <item>IACP Season 5</item>
     </string-array>
 
     <!-- Dialogs -->
@@ -442,7 +443,7 @@
     <string name="dialog_release_notes_version_41">
         Version 2.3.1\n
         - Fixed bug importing Vassal files with card fixes\n
-        - Card fixes are added to the list together with the fixed card if there are not enough points for adding the fixed card alone
+        - If there are not enough points to add a card, an attempt to add the card together with its fix (if any) is done automatically
     </string>
     <string name="dialog_release_notes_version_42">
         Version 2.3.2\n

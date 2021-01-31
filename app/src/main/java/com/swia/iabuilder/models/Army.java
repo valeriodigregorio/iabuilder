@@ -232,80 +232,6 @@ public class Army {
         return getDeck(cardType).getCards();
     }
 
-    private static String getShortName(DeploymentCard card) {
-        String name = card.getName();
-        if (card.isSkirmishUpgrade()) {
-            switch (name) {
-                case "Zillo Technique":
-                    return "Zillo";
-                case "The Darksaber":
-                    return "DS";
-                default:
-                    if (name.contains(" ")) {
-                        return StringUtils.getInitials(name);
-                    }
-                    return name;
-            }
-        }
-        switch (name) {
-            case "R2-D2":
-            case "CT-1701":
-            case "IG-88":
-            case "IG-11":
-            case "MHD-19":
-            case "Obi-Wan Kenobi":
-                return StringUtils.getFirstWord(name, "-");
-            case "C-3PO":
-                return StringUtils.getLastWord(name, "-");
-            case "C1-10P":
-                return card.getDescription().replace("\"", "");
-            case "Royal Guard Champion":
-                return StringUtils.getInitials(name);
-            case "Loth-cat":
-                return (card.isElite() ? "e" : "r") + StringUtils.capitalize(StringUtils.getLastWord(name, "-"));
-            case "Death Trooper":
-                return (card.isElite() ? "e" : "r") + StringUtils.getInitials(name);
-            case "Snowtrooper":
-            case "Stormtrooper":
-            case "Shoretrooper":
-                return (card.isElite() ? "e" : "r") + name.replace("trooper", "");
-            case "Trandoshan Hunter":
-                return (card.isElite() ? "e" : "r") + "Trando";
-            case "E-Web Engineer":
-                return (card.isElite() ? "e" : "r") + "Web";
-            case "Rebel Pathfinder":
-                return (card.isElite() ? "e" : "r") + "Path";
-            case "Rebel Saboteur":
-                return (card.isElite() ? "e" : "r") + "Sab";
-            case "Clawdite":
-                return (card.isElite() ? "e" : "r") + "Claw";
-            case "Jyn Odan":
-                return "J.Odan";
-            case "Jyn Erso":
-                return "J.Erso";
-            case "Chewbacca":
-                return "Chewie";
-            case "SC2-M Repulsor Tank":
-                return "Tank";
-            case "Emperor Palpatine":
-                return "Palp";
-            case "The Mandalorian":
-                return "Mandalorian";
-            case "Luke Skywalker":
-                return card.getDescription().equals("Jedi Knight") ? "J.Luke" : "H.Luke";
-            default:
-                for (String str : new String[] {"Agent", "Alliance", "Captain", "Darth", "Director",
-                        "General", "Imperial", "Rebel", "Royal", "The Grand", "Wookiee"}) {
-                    name = name.replace(str, "");
-                }
-                name = name.trim();
-                if (card.isUnique() || card.isMassive()) {
-                    return StringUtils.getFirstWord(name);
-                }
-                return (card.isElite() ? "e" : "r") + StringUtils.getFirstWord(name);
-        }
-    }
-
     public String getDefaultName() {
         return getDefaultName(0);
     }
@@ -318,7 +244,7 @@ public class Army {
         int i = 1;
         int n = 0;
         for (Card card : cards) {
-            String name = getShortName((DeploymentCard) card);
+            String name = ((DeploymentCard) card).getShortname();
             if (last_name == null) {
                 last_name = name;
             }
