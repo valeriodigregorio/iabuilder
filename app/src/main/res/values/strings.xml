@@ -217,7 +217,7 @@
     <string name="error_renaming_canceled">Army renaming canceled</string>
     <string name="error_deletion_canceled">Army deletion canceled</string>
     <string name="error_invalid_value">Enter a number between %1$d and %2$d</string>
-    <string name="error_invalid_link">Invalid Tabletop Admiral link</string>
+    <string name="error_invalid_link">Invalid link</string>
     <string name="error_invalid_file">Invalid Vassal deck file</string>
 
     <!-- Misc -->

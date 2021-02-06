@@ -27,9 +27,10 @@ import com.swia.iabuilder.R;
 import com.swia.iabuilder.activities.fragments.DeckFragment;
 import com.swia.iabuilder.datastores.ArmyStore;
 import com.swia.iabuilder.models.Army;
-import com.swia.iabuilder.utils.CardUtils;
-import com.swia.iabuilder.parsers.ttadmiral.TabletopAdmiralArmyMarshaller;
+import com.swia.iabuilder.parsers.ArmyMarshallerType;
+import com.swia.iabuilder.parsers.BaseArmyMarshaller;
 import com.swia.iabuilder.settings.SettingsManager;
+import com.swia.iabuilder.utils.CardUtils;
 import com.swia.iabuilder.utils.DoubleClickHelper;
 import com.swia.iabuilder.utils.UriUtils;
 import com.swia.iabuilder.views.dialogs.RenameArmyDialog;
@@ -96,7 +97,8 @@ public class ArmyActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private Intent getShareUrlIntent(Army army) {
-        String url = new TabletopAdmiralArmyMarshaller().serialize(army);
+        BaseArmyMarshaller<String, ?> marshaller = ArmyMarshallerType.TTA_EXTENDED.getMarshaller();
+        String url = marshaller.serialize(army);
         return ShareCompat.IntentBuilder.from(ArmyActivity.this)
                 .getIntent()
                 .putExtra(Intent.EXTRA_SUBJECT, army.getName())
@@ -148,7 +150,8 @@ public class ArmyActivity extends AppCompatActivity implements View.OnClickListe
                 return true;
             }
             case R.id.action_qrcode: {
-                String url = new TabletopAdmiralArmyMarshaller().serialize(army);
+                BaseArmyMarshaller<String, ?> marshaller = ArmyMarshallerType.TTA_EXTENDED.getMarshaller();
+                String url = marshaller.serialize(army);
                 QrCodeActivity.show(this, army, url);
                 return true;
             }

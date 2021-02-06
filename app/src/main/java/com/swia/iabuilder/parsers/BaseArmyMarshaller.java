@@ -78,6 +78,14 @@ public abstract class BaseArmyMarshaller<E, I> implements ArmyMarshaller<E> {
      */
     protected abstract E combine(E deploymentCards, E commandCards);
 
+    /**
+     * Check if a code is valid for this marshaller.
+     *
+     * @param code The code to convert.
+     * @return True if the code is valid for this marshaller. Otherwise, false.
+     */
+    protected abstract boolean isValid(E code);
+
     private List<Card> toCards(CardSystem cardSystem, CardType cardType, List<I> ids) {
         ArrayList<Card> cards = new ArrayList<>();
         for (I id : ids) {

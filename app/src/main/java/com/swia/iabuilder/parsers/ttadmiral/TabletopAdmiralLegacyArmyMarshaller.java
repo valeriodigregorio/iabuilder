@@ -7,23 +7,22 @@ import com.swia.iabuilder.parsers.BaseArmyMarshaller;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TabletopAdmiralArmyMarshaller extends BaseArmyMarshaller<String, Integer> {
+public class TabletopAdmiralLegacyArmyMarshaller extends BaseArmyMarshaller<String, Integer> {
 
-    private static final String BASE_URL = "http://tabletopadmiral.com/imperialassault/nuc";
-    private static final String DEPLOYMENT_SEPARATOR = "nuc";
-    private static final String COMMAND_SEPARATOR = "ncc";
-    private static final int DEPLOYMENT_CODE_LEN = 42;
+    private static final String BASE_URL = "http://tabletopadmiral.com/imperialassault/";
+    private static final int DEPLOYMENT_CODE_LEN = 30;
+    private static final int COMMAND_CODE_MAX_LEN = 30;
 
-    public TabletopAdmiralArmyMarshaller() {
+    public TabletopAdmiralLegacyArmyMarshaller() {
         super(new TabletopAdmiralCardParser());
     }
 
     private List<Integer> getIds(String code) {
-        final int n = 3;
+        final int n = 2;
         ArrayList<Integer> ids = new ArrayList<>();
         for (int i = 0; i < code.length(); i += n) {
             String c = code.substring(i, i + n);
-            Integer id = Integer.parseInt(c);
+            Integer id = Integer.parseInt(c, 16);
             ids.add(id);
         }
         return ids;
@@ -38,26 +37,19 @@ public class TabletopAdmiralArmyMarshaller extends BaseArmyMarshaller<String, In
     }
 
     private String toCode(Integer id) {
-        return String.format("%03d", id);
+        return String.format("%02x", id);
     }
 
     @Override
     protected List<Integer> getDeploymentIds(String code) {
-        String[] parts = code.split(COMMAND_SEPARATOR);
-        if (parts.length < 1) {
-            return new ArrayList<>();
-        }
-        code = parts[0].replace(DEPLOYMENT_SEPARATOR, "");
+        code = code.substring(0, DEPLOYMENT_CODE_LEN);
         return getIds(code);
     }
 
     @Override
     protected List<Integer> getCommandIds(String code) {
-        String[] parts = code.split(COMMAND_SEPARATOR);
-        if (parts.length < 2) {
-            return new ArrayList<>();
-        }
-        code = parts[1].replace(COMMAND_SEPARATOR, "");
+        final int n = Math.min(DEPLOYMENT_CODE_LEN + COMMAND_CODE_MAX_LEN, code.length());
+        code = code.substring(DEPLOYMENT_CODE_LEN, n);
         return getIds(code);
     }
 
@@ -72,11 +64,14 @@ public class TabletopAdmiralArmyMarshaller extends BaseArmyMarshaller<String, In
 
     @Override
     public Army deserialize(String code, String name) {
-        if (!isValid(code)) {
+        if (code == null || code.isEmpty()) {
             return null;
         }
-        code = DEPLOYMENT_SEPARATOR + code.replace("https://", "http://")
-                   .replace(BASE_URL, "");
+        code = code.replace("https://", "http://");
+        if (!code.startsWith(BASE_URL)) {
+            return null;
+        }
+        code = code.replace(BASE_URL, "");
         return super.deserialize(code, name);
     }
 
@@ -87,7 +82,7 @@ public class TabletopAdmiralArmyMarshaller extends BaseArmyMarshaller<String, In
 
     @Override
     protected String combine(String deploymentCards, String commandCards) {
-        return DEPLOYMENT_SEPARATOR + deploymentCards + COMMAND_SEPARATOR + commandCards;
+        return deploymentCards + commandCards;
     }
 
     @Override
@@ -105,6 +100,7 @@ public class TabletopAdmiralArmyMarshaller extends BaseArmyMarshaller<String, In
         if (code == null || code.isEmpty()) {
             return null;
         }
-        return BASE_URL + code.replace(DEPLOYMENT_SEPARATOR, "");
+        return BASE_URL + code;
     }
+
 }

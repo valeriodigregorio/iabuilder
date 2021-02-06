@@ -20,7 +20,6 @@ import com.swia.iabuilder.datastores.ArmyStore;
 import com.swia.iabuilder.models.comparators.DeploymentCardSafeComparator;
 import com.swia.iabuilder.utils.CardUtils;
 import com.swia.iabuilder.utils.JsonUtils;
-import com.swia.iabuilder.utils.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

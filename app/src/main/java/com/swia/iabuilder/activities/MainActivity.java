@@ -38,7 +38,7 @@ import com.swia.iabuilder.datastores.ArmyStore;
 import com.swia.iabuilder.datastores.ConfigStore;
 import com.swia.iabuilder.models.Army;
 import com.swia.iabuilder.models.Faction;
-import com.swia.iabuilder.parsers.ttadmiral.TabletopAdmiralArmyMarshaller;
+import com.swia.iabuilder.parsers.ArmyMarshallerType;
 import com.swia.iabuilder.parsers.vassal.VassalParser;
 import com.swia.iabuilder.settings.SettingsActivity;
 import com.swia.iabuilder.settings.SettingsManager;
@@ -124,19 +124,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void importArmyFromUrl(String url) {
-        final Army army = new TabletopAdmiralArmyMarshaller().deserialize(url, "");
-        String name = null;
-        if (army != null) {
-            name = army.getDefaultName(2);
+        ArmyMarshallerType type = ArmyMarshallerType.fromURL(url);
+        if (type != null) {
+            final Army army = type.getMarshaller().deserialize(url, "");
+            String name = null;
+            if (army != null) {
+                name = army.getDefaultName(2);
+            }
+            if (name != null) {
+                army.setName(name);
+                ArmyStore.save(army);
+                setCurrentFragment(army.getFaction());
+                ArmyActivity.show(this, army.getUuid());
+                return;
+            }
         }
-        if (name != null) {
-            army.setName(name);
-            ArmyStore.save(army);
-            setCurrentFragment(army.getFaction());
-            ArmyActivity.show(this, army.getUuid());
-        } else {
-            Toast.makeText(this, getString(R.string.error_invalid_link), Toast.LENGTH_SHORT).show();
-        }
+        Toast.makeText(this, getString(R.string.error_invalid_link), Toast.LENGTH_SHORT).show();
     }
 
     private void importArmyFromFile(Uri uri) {
