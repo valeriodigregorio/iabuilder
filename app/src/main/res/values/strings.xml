@@ -457,7 +457,7 @@
     <string name="dialog_release_notes_version_44">
         Version 2.3.4\n
         - Updated Vassal and TabletopAdmiral mappings after updates for IACP v5.0\n
-        - Hotfix for Modular ability of IACP Heavy Stoormtrooper: their cost is decreased by 1. A proper fix will come only after approval.
+        - Hotfix for Modular ability of IACP Heavy Stormtrooper: their cost is decreased by 1. A proper fix will come only after approval.
     </string>
 
 </resources>
