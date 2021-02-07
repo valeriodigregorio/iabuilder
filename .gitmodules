@@ -1,0 +1,3 @@
+[submodule "swia-dataset-cards"]
+	path = swia-dataset-cards
+	url = git@github.com:valeriodigregorio/swia-dataset-cards.git

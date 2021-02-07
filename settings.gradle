@@ -1,2 +1,3 @@
+include ':swia-dataset-cards'
 include ':app'
 rootProject.name = "IA Builder"
