@@ -437,7 +437,7 @@
     </string>
     <string name="dialog_release_notes_version_40">
         Version 2.3.0\n
-        - Changes for IACP v5.0 spoilers: Cassian Andor, K-2SO, Blend In\n
+        - Changes for IACP v5.0 spoilers: Cassian Andor, K-2S0, Blend In\n
         - Added clear button for search box in card browser
     </string>
     <string name="dialog_release_notes_version_41">
@@ -453,6 +453,11 @@
         Version 2.3.3\n
         - IACP Season 5 content\n
         - Minor fixes
+    </string>
+    <string name="dialog_release_notes_version_44">
+        Version 2.3.4\n
+        - Updated Vassal and TabletopAdmiral mappings after updates for IACP v5.0\n
+        - Hotfix for Modular ability of IACP Heavy Stoormtrooper: their cost is decreased by 1. A proper fix will come only after approval.
     </string>
 
 </resources>

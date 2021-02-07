@@ -1,5 +1,7 @@
 package com.swia.iabuilder.parsers.vassal;
 
+import android.util.Log;
+
 import com.swia.datasets.cards.CardType;
 import com.swia.datasets.cards.CommandCard;
 import com.swia.iabuilder.models.Army;
@@ -106,10 +108,18 @@ public class VassalParser {
         CardSystem cardSystem = CardSystem.valueOf(army.getCardSystem().toString().toUpperCase());
         for (com.swia.datasets.cards.Card card : army.getCards(com.swia.datasets.cards.CardType.DEPLOYMENT)) {
             Card c = IavdFile.getCard(cardSystem, card.getStringId());
+            if (c == null) {
+                Log.e("VassalParser", card.getStringId());
+                continue;
+            }
             cards.add(c);
         }
         for (com.swia.datasets.cards.Card card : army.getCards(com.swia.datasets.cards.CardType.COMMAND)) {
             Card c = IavdFile.getCard(cardSystem, card.getStringId());
+            if (c == null) {
+                Log.e("VassalParser", card.getStringId());
+                continue;
+            }
             cards.add(c);
         }
         IavdFile.save(stream, cards);

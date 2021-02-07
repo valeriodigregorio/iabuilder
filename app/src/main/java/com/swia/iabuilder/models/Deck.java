@@ -22,10 +22,17 @@ public abstract class Deck {
     private HashSet<Card> shortlist;
     private final CardCounter counter = new CardCounter();
 
+    private static final int IACP_HEAVY_STOORMTROOPER_ELITE = 53;
+
     private static int getCardCost(Card card) {
         switch (card.getCardType()) {
             case DEPLOYMENT:
-                return ((DeploymentCard) card).getDeploymentCost();
+                int cost = ((DeploymentCard) card).getDeploymentCost();
+                // TODO: Introduce a better handling of Modular ability once the card gets approval
+                if (card.getId() == IACP_HEAVY_STOORMTROOPER_ELITE) {
+                    cost -= 1;
+                }
+                return cost;
             case COMMAND:
                 return ((CommandCard) card).getCost();
             default:
