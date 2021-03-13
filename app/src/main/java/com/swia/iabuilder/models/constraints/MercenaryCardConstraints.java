@@ -1,35 +1,55 @@
 package com.swia.iabuilder.models.constraints;
 
 import com.swia.datasets.cards.Card;
-import com.swia.datasets.cards.DeploymentCard;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MercenaryCardConstraints implements CardConstraint {
 
-    private final EliteJawa eliteJawa;
-    private final MercenaryTemporaryAlliance temporaryAlliance;
-
     private int overlaps;
+    private List<CardAllowance> allowanceList;
 
     public MercenaryCardConstraints() {
         overlaps = 0;
-        eliteJawa = new EliteJawa();
-        temporaryAlliance = new MercenaryTemporaryAlliance();
+        allowanceList = new ArrayList<>();
+        allowanceList.add(new MercenaryTemporaryAlliance());
+        allowanceList.add(new EliteJawa());
+        allowanceList.add(new DoctorAphra());
     }
 
     private boolean isOverlap(Card card) {
-        DeploymentCard c = (DeploymentCard) card;
-        return applicable(c) && temporaryAlliance.isValid(card) && eliteJawa.isValid(card);
+        int n = 0;
+        for (CardAllowance allowance : allowanceList) {
+            n += allowance.isValid(card) ? 1 : 0;
+        }
+        return n > 1 && applicable(card);
     }
 
-    private boolean applicable(DeploymentCard card) {
-        return eliteJawa.applicable(card) || temporaryAlliance.applicable(card);
+    private boolean applicable(Card card) {
+        for (CardAllowance allowance : allowanceList) {
+            if (allowance.applicable(card)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean checkAll(Card card) {
+        for (CardAllowance allowance : allowanceList) {
+            if (allowance.check(card)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
     public void reset() {
         overlaps = 0;
-        eliteJawa.reset();
-        temporaryAlliance.reset();
+        for (CardAllowance allowance : allowanceList) {
+            allowance.reset();
+        }
     }
 
     @Override
@@ -37,8 +57,9 @@ public class MercenaryCardConstraints implements CardConstraint {
         if (isOverlap(card)) {
             overlaps++;
         } else {
-            eliteJawa.add(card);
-            temporaryAlliance.add(card);
+            for (CardAllowance allowance : allowanceList) {
+                allowance.add(card);
+            }
         }
     }
 
@@ -47,24 +68,34 @@ public class MercenaryCardConstraints implements CardConstraint {
         if (overlaps > 0 && isOverlap(card)) {
             overlaps--;
         } else {
-            eliteJawa.remove(card);
-            temporaryAlliance.remove(card);
+            for (CardAllowance allowance : allowanceList) {
+                allowance.remove(card);
+            }
         }
     }
 
     @Override
     public boolean check(Card card) {
-        if (!applicable((DeploymentCard) card)) {
+        if (!applicable(card)) {
             return true;
         }
-        if (eliteJawa.getAllowance() + temporaryAlliance.getAllowance() > overlaps) {
-            return temporaryAlliance.check(card) || eliteJawa.check(card);
+        int n = 0;
+        for (CardAllowance allowance : allowanceList) {
+            n += allowance.getAllowance();
+        }
+        if (n > overlaps) {
+            return checkAll(card);
         }
         return false;
     }
 
     @Override
     public boolean isValid(Card card) {
-        return eliteJawa.isValid(card) || temporaryAlliance.isValid(card);
+        for (CardAllowance allowance : allowanceList) {
+            if (allowance.isValid(card)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

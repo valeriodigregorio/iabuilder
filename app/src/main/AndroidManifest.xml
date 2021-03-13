@@ -51,7 +51,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="tabletopadmiral.com"
+                    android:host="classic.tabletopadmiral.com"
                     android:pathPrefix="/imperialassault"
                     android:scheme="http" />
             </intent-filter>
@@ -62,7 +62,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="tabletopadmiral.com"
+                    android:host="classic.tabletopadmiral.com"
                     android:pathPrefix="/imperialassault"
                     android:scheme="https" />
             </intent-filter>

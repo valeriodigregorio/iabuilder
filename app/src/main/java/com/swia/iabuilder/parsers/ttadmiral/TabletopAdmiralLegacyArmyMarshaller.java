@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TabletopAdmiralLegacyArmyMarshaller extends BaseArmyMarshaller<String, Integer> {
 
-    private static final String BASE_URL = "http://tabletopadmiral.com/imperialassault/";
+    private static final String BASE_URL = "http://classic.tabletopadmiral.com/imperialassault/";
     private static final int DEPLOYMENT_CODE_LEN = 30;
     private static final int COMMAND_CODE_MAX_LEN = 30;
 
