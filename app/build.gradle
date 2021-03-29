@@ -6,8 +6,8 @@ android {
         applicationId "com.swia.iabuilder"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 45
-        versionName "2.3.5"
+        versionCode 46
+        versionName "2.3.6"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {

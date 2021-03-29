@@ -1,5 +1,6 @@
 package com.swia.iabuilder.models.comparators;
 
+import com.swia.iabuilder.models.constraints.DoctorAphra;
 import com.swia.iabuilder.models.constraints.EliteJawa;
 import com.swia.iabuilder.models.constraints.ImperialTemporaryAlliance;
 import com.swia.iabuilder.models.constraints.MercenaryTemporaryAlliance;
@@ -40,8 +41,10 @@ public class DeploymentCardSafeComparator implements Comparator<Card> {
                 return 80;
             case SaskaTeft.CARD_ID:
                 return 90;
-            case EliteJawa.CARD_ID:
+            case DoctorAphra.CARD_ID:
                 return 100;
+            case EliteJawa.CARD_ID:
+                return 110;
             default:
                 return 0;
         }

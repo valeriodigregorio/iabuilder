@@ -8,22 +8,26 @@ import java.util.List;
 public class MercenaryCardConstraints implements CardConstraint {
 
     private int overlaps;
-    private List<CardAllowance> allowanceList;
+    private final List<CardAllowance> allowanceList = new ArrayList<>();
 
     public MercenaryCardConstraints() {
         overlaps = 0;
-        allowanceList = new ArrayList<>();
-        allowanceList.add(new MercenaryTemporaryAlliance());
-        allowanceList.add(new EliteJawa());
         allowanceList.add(new DoctorAphra());
+        allowanceList.add(new EliteJawa());
+        allowanceList.add(new MercenaryTemporaryAlliance());
     }
 
     private boolean isOverlap(Card card) {
+        if (!applicable(card)) {
+            return false;
+        }
         int n = 0;
         for (CardAllowance allowance : allowanceList) {
-            n += allowance.isValid(card) ? 1 : 0;
+            if (allowance.isValid(card)) {
+                n++;
+            }
         }
-        return n > 1 && applicable(card);
+        return n > 1;
     }
 
     private boolean applicable(Card card) {
@@ -58,7 +62,11 @@ public class MercenaryCardConstraints implements CardConstraint {
             overlaps++;
         } else {
             for (CardAllowance allowance : allowanceList) {
+                int old = allowance.getAllowance();
                 allowance.add(card);
+                if (old != allowance.getAllowance()) {
+                    break;
+                }
             }
         }
     }
@@ -69,7 +77,11 @@ public class MercenaryCardConstraints implements CardConstraint {
             overlaps--;
         } else {
             for (CardAllowance allowance : allowanceList) {
+                int old = allowance.getAllowance();
                 allowance.remove(card);
+                if (old != allowance.getAllowance()) {
+                    break;
+                }
             }
         }
     }
@@ -83,10 +95,7 @@ public class MercenaryCardConstraints implements CardConstraint {
         for (CardAllowance allowance : allowanceList) {
             n += allowance.getAllowance();
         }
-        if (n > overlaps) {
-            return checkAll(card);
-        }
-        return false;
+        return n > overlaps && checkAll(card);
     }
 
     @Override
