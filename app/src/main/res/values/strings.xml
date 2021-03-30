@@ -467,7 +467,7 @@
     <string name="dialog_release_notes_version_46">
         Version 2.3.6\n
         - Update for IACP v5.2\n
-        - Fixed interaction between Doctor Aphra and Elite Jawa/Temporary Alliance.
+        - Fixed interaction among Doctor Aphra, Elite Jawa and Temporary Alliance.
     </string>
 
 </resources>
