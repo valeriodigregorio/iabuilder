@@ -9,7 +9,7 @@ public interface CardConstraint {
 
     void remove(Card card);
 
-    boolean check(Card card);
+    boolean isAllowed(Card card);
 
     boolean isValid(Card card);
 }

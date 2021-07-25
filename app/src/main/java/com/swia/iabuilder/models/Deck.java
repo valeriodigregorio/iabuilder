@@ -21,6 +21,7 @@ public abstract class Deck {
     private ArrayList<Card> cards;
     private HashSet<Card> shortlist;
     private final CardCounter counter = new CardCounter();
+    private final Army army;
 
     private static final int IACP_HEAVY_STOORMTROOPER_ELITE = 53;
 
@@ -40,26 +41,31 @@ public abstract class Deck {
         }
     }
 
-    public static Deck create(CardType cardType) {
+    public static Deck create(CardType cardType, Army army) {
         switch (cardType) {
             case DEPLOYMENT:
-                return new DeploymentDeck();
+                return new DeploymentDeck(army);
             case COMMAND:
-                return new CommandDeck();
+                return new CommandDeck(army);
             default:
                 throw new IllegalArgumentException(cardType.toString());
         }
     }
 
-    public Deck(CardType cardType, int pointsLimit, int sizeLimit) {
+    public Deck(CardType cardType, int pointsLimit, int sizeLimit, Army army) {
         this.cardType = cardType;
         this.pointsLimit = pointsLimit;
         this.sizeLimit = sizeLimit;
+        this.army = army;
         clear();
     }
 
-    public Deck(CardType cardType, int pointsLimit) {
-        this(cardType, pointsLimit, Integer.MAX_VALUE);
+    public Deck(CardType cardType, int pointsLimit, Army army) {
+        this(cardType, pointsLimit, Integer.MAX_VALUE, army);
+    }
+
+    protected Army getArmy() {
+        return army;
     }
 
     public int getPointsLeft() {
@@ -79,8 +85,6 @@ public abstract class Deck {
         pointsLeft += n;
     }
 
-    public abstract boolean isValid(Card card, Army army);
-
     public boolean canAdd(Card card) {
         int cost = getCardCost(card);
         if (card.getCardType() == CardType.DEPLOYMENT && cost > pointsLeft) {
@@ -92,8 +96,12 @@ public abstract class Deck {
         return currentSize < sizeLimit && cost <= pointsLeft && isAllowed(card);
     }
 
+    public boolean isValid(Card card) {
+        return counter.isValid(card);
+    }
+
     public boolean isAllowed(Card card) {
-        return counter.check(card);
+        return counter.isAllowed(card);
     }
 
     protected abstract void onAdd(Card card);
@@ -130,14 +138,6 @@ public abstract class Deck {
         }
     }
 
-    public void removeAll() {
-        counter.reset();
-        cards = new ArrayList<>();
-        pointsLeft = pointsLimit;
-        currentSize = 0;
-        onClear();
-    }
-
     public void toggleShortlist(Card card) {
         if (shortlist.contains(card)) {
             shortlist.remove(card);
@@ -152,6 +152,10 @@ public abstract class Deck {
 
     public void clear() {
         shortlist = new HashSet<>();
-        removeAll();
+        counter.reset();
+        cards = new ArrayList<>();
+        pointsLeft = pointsLimit;
+        currentSize = 0;
+        onClear();
     }
 }

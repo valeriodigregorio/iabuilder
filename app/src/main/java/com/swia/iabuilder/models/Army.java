@@ -24,6 +24,7 @@ import com.swia.iabuilder.utils.JsonUtils;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 public class Army {
@@ -44,9 +45,6 @@ public class Army {
     }
 
     private Army(String uuid, CardSystem cardSystem, Faction faction, String name, int victories, int defeats) {
-        for (CardType cardType : CardUtils.VISIBLE_CARD_TYPES) {
-            decks[cardType.ordinal()] = Deck.create(cardType);
-        }
         if (uuid == null) {
             uuid = ArmyStore.newUuid();
         }
@@ -56,6 +54,9 @@ public class Army {
         setName(name);
         setVictories(victories);
         setDefeats(defeats);
+        for (CardType cardType : CardUtils.VISIBLE_CARD_TYPES) {
+            decks[cardType.ordinal()] = Deck.create(cardType, this);
+        }
     }
 
     public static Army fromJson(String json) {
@@ -99,7 +100,6 @@ public class Army {
 
     public void setFaction(Faction faction) {
         this.faction = faction;
-        ((DeploymentDeck) getDeck(CardType.DEPLOYMENT)).setFaction(faction);
     }
 
     public String getName() {
@@ -140,7 +140,7 @@ public class Army {
     }
 
     public boolean isValid(Card card) {
-        return getDeck(card.getCardType()).isValid(card, this);
+        return getDeck(card.getCardType()).isValid(card);
     }
 
     public boolean isAllowed(Card card) {
@@ -152,7 +152,7 @@ public class Army {
     }
 
     public boolean canAdd(Card card) {
-        if (!getDeck(card.getCardType()).canAdd(card)) {
+        if (!isValid(card) || !getDeck(card.getCardType()).canAdd(card)) {
             return false;
         }
         if (card instanceof DeploymentCard) {
@@ -163,7 +163,7 @@ public class Army {
     }
 
     public boolean add(Card card) {
-        if (card != null && isValid(card) && canAdd(card)) {
+        if (card != null && canAdd(card)) {
             getDeck(card.getCardType()).add(card);
             if (card instanceof DeploymentCard && card.getId() == BALANCE_OF_THE_FORCE) {
                 getDeck(CardType.COMMAND).incrementPointsLimit(3);
@@ -185,7 +185,7 @@ public class Army {
                     skipped = true;
                     continue;
                 }
-                if (!testArmy.isValid(c) || !testArmy.canAdd(c)) {
+                if (!testArmy.canAdd(c)) {
                     sideEffects.add(c);
                 } else {
                     testArmy.add(c);
@@ -204,11 +204,15 @@ public class Army {
             }
             ArrayList<Card> cards = getCards(card.getCardType());
             Collections.sort(cards, DeploymentCardSafeComparator.Instance);
-            deck.removeAll();
+            HashSet<Card> shortlist = deck.getShortlist();
+            deck.clear();
             for (Card c : cards) {
-                if (isValid(c) && canAdd(c)) {
+                if (canAdd(c)) {
                     deck.add(c);
                 }
+            }
+            for (Card c : shortlist) {
+                deck.toggleShortlist(c);
             }
         }
     }
@@ -294,7 +298,7 @@ public class Army {
             Collections.sort(cards, DeploymentCardSafeComparator.Instance);
             for (Card card : cards) {
                 if (!army.add(card)) {
-                    Log.w(TAG, "Error processing ID " + card.getId() + " in army: " + json.toString());
+                    Log.w(TAG, "Error processing deployment card ID " + card.getId() + " in army: " + json.toString());
                 }
             }
 
@@ -302,7 +306,7 @@ public class Army {
             cards = JsonUtils.toCardList(cardSystem, CardType.COMMAND, jsonArray);
             for (Card card : cards) {
                 if (!army.add(card)) {
-                    Log.w(TAG, "Error processing ID " + card.getId() + " in army: " + json.toString());
+                    Log.w(TAG, "Error processing command card ID " + card.getId() + " in army: " + json.toString());
                 }
             }
 

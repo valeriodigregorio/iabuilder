@@ -4,19 +4,28 @@ import com.swia.datasets.cards.Affiliation;
 import com.swia.datasets.cards.Card;
 import com.swia.datasets.cards.DeploymentCard;
 
-public class ImperialTemporaryAlliance extends CardAllowance {
+public class ImperialTemporaryAlliance extends CrossFactionConstraint {
     public static final int CARD_ID = 119;
-    public static final int BASE_ALLOWANCE = 2;
-    public static final Affiliation CARD_AFFILIATION = Affiliation.IMPERIAL;
+    public static final int ALLOWANCE = 2;
+    private static final int PRIORITY = 3;
 
     public ImperialTemporaryAlliance() {
-        super(BASE_ALLOWANCE, CARD_ID, CARD_AFFILIATION);
+        super(ALLOWANCE);
     }
 
     @Override
-    public boolean applicable(Card card) {
+    public int getCardId() {
+        return CARD_ID;
+    }
+    
+    @Override
+    public int getPriority() {
+        return PRIORITY;
+    }
+    
+    @Override
+    public boolean isValid(Card card) {
         DeploymentCard c = (DeploymentCard) card;
-        Affiliation affiliation = c.getAffiliation();
-        return affiliation == Affiliation.MERCENARY && !c.isUpgrade();
+        return c.getAffiliation() == Affiliation.MERCENARY && !c.isUpgrade();
     }
 }

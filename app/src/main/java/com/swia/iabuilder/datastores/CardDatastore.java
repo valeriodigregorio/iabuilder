@@ -210,7 +210,7 @@ public class CardDatastore {
             if (army.isValid(card)) {
                 boolean enabled = army.canAdd(card);
                 boolean shortlisted = army.isShortlisted(card);
-                if (showDisabled || enabled || (shortlisted && army.isAllowed(card))) {
+                if (showDisabled || enabled || shortlisted) {
                     entries.add(new CardViewHolder.CardEntry(card, enabled, shortlisted));
                 }
             }

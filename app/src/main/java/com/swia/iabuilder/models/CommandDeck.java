@@ -11,19 +11,19 @@ public class CommandDeck extends Deck {
     private static final int MAX_POINTS = 15;
     private static final int MAX_CARDS = 15;
 
-    public CommandDeck() {
-        super(CardType.COMMAND, MAX_POINTS, MAX_CARDS);
+    public CommandDeck(Army army) {
+        super(CardType.COMMAND, MAX_POINTS, MAX_CARDS, army);
     }
 
     @Override
-    public boolean isValid(Card card, Army army) {
+    public boolean isValid(Card card) {
         if (card instanceof CommandCard) {
             CommandCard c = (CommandCard) card;
             String[] cardRestrictions = c.getRestrictions();
             if (cardRestrictions == null || cardRestrictions.length == 0) {
                 return true;
             }
-            DeploymentDeck deck = (DeploymentDeck) army.getDeck(CardType.DEPLOYMENT);
+            DeploymentDeck deck = (DeploymentDeck) getArmy().getDeck(CardType.DEPLOYMENT);
             Set<String> traitsRestrictions = deck.getCommandDeckRestrictions();
             for (String restriction : cardRestrictions) {
                 if (traitsRestrictions.contains(restriction)) {

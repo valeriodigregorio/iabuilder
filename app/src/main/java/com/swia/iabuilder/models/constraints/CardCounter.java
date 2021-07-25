@@ -1,6 +1,7 @@
 package com.swia.iabuilder.models.constraints;
 
 import com.swia.datasets.cards.Card;
+import com.swia.datasets.cards.DeploymentCard;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,12 +45,19 @@ public class CardCounter implements CardConstraint {
     }
 
     @Override
-    public boolean check(Card card) {
-        return !counters.containsKey(card.getId()) || counters.get(card.getId()) < card.getLimit();
+    public boolean isAllowed(Card card) {
+        if (!isValid(card)) {
+            return false;
+        }
+        Integer n = counters.get(card.getId());
+        if (n == null) {
+            n = 0;
+        }
+        return n < card.getLimit();
     }
 
     @Override
     public boolean isValid(Card card) {
-        return true;
+        return card instanceof DeploymentCard;
     }
 }

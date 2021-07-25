@@ -8,7 +8,7 @@ import com.swia.datasets.cards.CompanionCard;
 import com.swia.datasets.cards.DeploymentCard;
 import com.swia.datasets.cards.Size;
 import com.swia.iabuilder.models.constraints.CardUniqueNames;
-import com.swia.iabuilder.models.constraints.DeploymentCardConstraints;
+import com.swia.iabuilder.models.constraints.SpecialCards;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -23,8 +23,7 @@ public class DeploymentDeck extends Deck {
     private static final int IACP_DARKSABER = 202;
     private static final int IACP_MARA_JADE = 206;
 
-    private Faction faction = null;
-    private DeploymentCardConstraints constraints = null;
+    private final SpecialCards specialCards;
     private final CardUniqueNames uniqueNames = new CardUniqueNames();
 
     private Set<String> commandDeckRestrictions = new HashSet<>();
@@ -34,25 +33,29 @@ public class DeploymentDeck extends Deck {
     private boolean hasMaul = false;
     private boolean hasDarksaber = false;
 
-    public DeploymentDeck() {
-        super(CardType.DEPLOYMENT, MAX_POINTS);
-    }
-
-    public void setFaction(Faction faction) {
-        this.faction = faction;
-        constraints = new DeploymentCardConstraints(faction);
-        clear();
+    public DeploymentDeck(Army army) {
+        super(CardType.DEPLOYMENT, MAX_POINTS, army);
+        specialCards = new SpecialCards(army);
     }
 
     @Override
-    public boolean isValid(Card card, Army army) {
-        return card instanceof DeploymentCard && constraints != null && constraints.isValid(card);
+    public boolean isValid(Card card) {
+        if (super.isValid(card) && uniqueNames.isValid(card)) {
+            Affiliation affiliation = ((DeploymentCard) card).getAffiliation();
+            return affiliation == getArmy().getFaction().getAffiliation() ||
+                    affiliation == Affiliation.NEUTRAL ||
+                    specialCards.isPotentiallyValid(card, getArmy().getFaction());
+        }
+        return false;
     }
 
     @Override
     public boolean isAllowed(Card card) {
-        if (super.isAllowed(card) && uniqueNames.check(card)) {
-            return constraints != null && constraints.check(card);
+        if (super.isAllowed(card) && uniqueNames.isAllowed(card)) {
+            Affiliation affiliation = ((DeploymentCard) card).getAffiliation();
+            return affiliation == getArmy().getFaction().getAffiliation() ||
+                    affiliation == Affiliation.NEUTRAL ||
+                    specialCards.isAllowed(card);
         }
         return false;
     }
@@ -84,7 +87,7 @@ public class DeploymentDeck extends Deck {
 
     @Override
     protected void onAdd(Card card) {
-        constraints.add(card);
+        specialCards.add(card);
         uniqueNames.add(card);
         updateCommandDeckRestrictions(card);
         updateUpgradeRestrictions(card);
@@ -92,7 +95,7 @@ public class DeploymentDeck extends Deck {
 
     @Override
     protected void onRemove(Card card) {
-        constraints.remove(card);
+        specialCards.remove(card);
         uniqueNames.remove(card);
         resetRestrictions();
     }
@@ -102,8 +105,8 @@ public class DeploymentDeck extends Deck {
         if (uniqueNames != null) {
             uniqueNames.reset();
         }
-        if (constraints != null) {
-            constraints.reset();
+        if (specialCards != null) {
+            specialCards.reset();
         }
         resetRestrictions();
     }
@@ -174,8 +177,7 @@ public class DeploymentDeck extends Deck {
                     hasDarksaber = true;
                     break;
                 case IACP_MARA_JADE:
-                    affiliation = faction.getAffiliation();
-                    switch (affiliation) {
+                    switch (getArmy().getFaction().getAffiliation()) {
                         case REBEL:
                             commandDeckRestrictions.add("Guardian");
                             break;
@@ -190,7 +192,7 @@ public class DeploymentDeck extends Deck {
             }
 
             if (hasDarksaber && hasMaul) {
-                String imperial = Affiliation.IMPERIAL.getName();
+                final String imperial = Affiliation.IMPERIAL.getName();
                 commandDeckRestrictions.add(imperial);
                 commandDeckRestrictions.add("Any " + imperial + " Figure");
                 commandDeckRestrictions.add(imperial + " Force User");

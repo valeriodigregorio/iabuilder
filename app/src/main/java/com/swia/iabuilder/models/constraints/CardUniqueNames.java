@@ -21,25 +21,26 @@ public class CardUniqueNames implements CardConstraint {
 
     @Override
     public void add(Card card) {
-        if (isValid(card)) {
+        if (isAllowed(card)) {
             names.add(card.getName());
         }
     }
 
     @Override
     public void remove(Card card) {
-        if (isValid(card)) {
+        if (isAllowed(card)) {
             names.remove(card.getName());
         }
     }
 
     @Override
-    public boolean check(Card card) {
-        return !isValid(card) || !names.contains(card.getName());
+    public boolean isAllowed(Card card) {
+        return isValid(card) &&
+                (!((DeploymentCard) card).isUnique() || !names.contains(card.getName()));
     }
 
     @Override
     public boolean isValid(Card card) {
-        return ((DeploymentCard) card).isUnique();
+        return card instanceof DeploymentCard;
     }
 }
