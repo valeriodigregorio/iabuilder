@@ -474,7 +474,9 @@
         Version 2.3.7\n
         - Update for IACP v6.0\n
         - 4-LOM now has access to command cards for Any Ready Vehicle, Large Creature and affiliation-specific Force User\n
-        - Fixed interaction among Doctor Aphra, Elite Jawa and Temporary Alliance.
+        - Fixed interaction among Doctor Aphra, Elite Jawas and Temporary Alliance\n
+        - Quested and Modular abilities are implemented as a flat -1 of the figure cost\n
+        - Missing support for Vassal cards in IACP Season 6 (coming soon).
     </string>
 
 </resources>
