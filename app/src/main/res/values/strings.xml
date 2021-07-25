@@ -3,7 +3,7 @@
 
     <!-- Card systems -->
     <string name="card_system_ffg">FFG</string>
-    <string name="card_system_iacp">IACP Season 5</string>
+    <string name="card_system_iacp">IACP Season 6</string>
 
     <!-- Content Descriptions -->
     <string name="qrcode">QR code</string>
@@ -162,6 +162,7 @@
         <item>IACP Season 3</item>
         <item>IACP Season 4</item>
         <item>IACP Season 5</item>
+        <item>IACP Season 6</item>
     </string-array>
 
     <!-- Dialogs -->
@@ -467,6 +468,12 @@
     <string name="dialog_release_notes_version_46">
         Version 2.3.6\n
         - Update for IACP v5.2\n
+        - Fixed interaction among Doctor Aphra, Elite Jawa and Temporary Alliance.
+    </string>
+    <string name="dialog_release_notes_version_47">
+        Version 2.3.7\n
+        - Update for IACP v6.0\n
+        - 4-LOM now has access to command cards for Any Ready Vehicle, Large Creature and affiliation-specific Force User\n
         - Fixed interaction among Doctor Aphra, Elite Jawa and Temporary Alliance.
     </string>
 

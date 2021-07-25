@@ -153,7 +153,9 @@ public class DeploymentDeck extends Deck {
                 case IACP_4LOM:
                     commandDeckRestrictions.add("Brawler");
                     commandDeckRestrictions.add("Creature");
+                    commandDeckRestrictions.add("Large Creature");
                     commandDeckRestrictions.add("Force User");
+                    commandDeckRestrictions.add(affiliation.getName() + " Force User");
                     commandDeckRestrictions.add("Guardian");
                     commandDeckRestrictions.add("Heavy Weapon");
                     commandDeckRestrictions.add("Hunter");
@@ -162,6 +164,7 @@ public class DeploymentDeck extends Deck {
                     commandDeckRestrictions.add("Spy");
                     commandDeckRestrictions.add("Trooper");
                     commandDeckRestrictions.add("Vehicle");
+                    commandDeckRestrictions.add("Any Ready Vehicle");
                     commandDeckRestrictions.add("Wookiee");
                     break;
                 case MAUL:
@@ -244,13 +247,17 @@ public class DeploymentDeck extends Deck {
 
         skirmishUpgradesRestrictions.add(deploymentCard.getName());
 
-        boolean isTrooper = false;
+        Affiliation affiliation = deploymentCard.getAffiliation();
+        skirmishUpgradesRestrictions.add(affiliation.getName());
+
+        int n = deploymentCard.getDeploymentGroup();
+        skirmishUpgradesRestrictions.add(n + " figure" + (n == 1 ? "" : "s"));
+
         boolean isGuardian = false;
         for (String trait : deploymentCard.getTraits()) {
             if (!trait.equals("Squad Upgrade")) {
                 skirmishUpgradesRestrictions.add(trait);
             }
-            isTrooper |= trait.equals("Trooper");
             isGuardian |= trait.equals("Guardian");
         }
 
@@ -266,9 +273,6 @@ public class DeploymentDeck extends Deck {
         } else {
             anyNonUnique = true;
             skirmishUpgradesRestrictions.add("Non-unique");
-            if (!isTrooper) {
-                skirmishUpgradesRestrictions.add("Non-unique Trooper");
-            }
         }
 
         if (!deploymentCard.isSpectre()) {
