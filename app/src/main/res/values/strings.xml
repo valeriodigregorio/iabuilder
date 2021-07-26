@@ -478,5 +478,9 @@
         - Quested and Modular abilities are implemented as a flat -1 of the figure cost\n
         - Missing support for Vassal cards in IACP Season 6 (coming soon).
     </string>
+    <string name="dialog_release_notes_version_48">
+        Version 2.3.8\n
+        - Fixed a bug that did not allow to add command cards in an army.
+    </string>
 
 </resources>
