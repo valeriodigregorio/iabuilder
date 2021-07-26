@@ -20,6 +20,8 @@ public class DeploymentCardSafeComparator implements Comparator<Card> {
     private static final int WOOKIEE_AVENGER = 160;
     private static final int HAN_SOLO = 50;
     private static final int ROGUE_SMUGGLER = 157;
+    private static final int BIB_FORTUNA = 211;
+
 
     public static int isSpecialCard(DeploymentCard card) {
         switch (card.getId()) {
@@ -45,6 +47,8 @@ public class DeploymentCardSafeComparator implements Comparator<Card> {
                 return 100;
             case EliteJawa.CARD_ID:
                 return 110;
+            case BIB_FORTUNA:
+                return -1;
             default:
                 return 0;
         }
@@ -60,6 +64,13 @@ public class DeploymentCardSafeComparator implements Comparator<Card> {
 
         int p1 = isSpecialCard(card1);
         int p2 = isSpecialCard(card2);
+        if (p1 < 0 || p2 < 0) {
+            if (p1 < 0) {
+                return 1;
+            } else {
+                return -1;
+            }
+        }
         if (p1 > 0 && p2 > 0) {
             return Integer.compare(p1, p2);
         } else {

@@ -22,6 +22,7 @@ public class DeploymentDeck extends Deck {
     private static final int IACP_4LOM = 190;
     private static final int IACP_DARKSABER = 202;
     private static final int IACP_MARA_JADE = 206;
+    private static final int IACP_BIB_FORTUNA = 211;
 
     private final SpecialCards specialCards;
     private final CardUniqueNames uniqueNames = new CardUniqueNames();
@@ -53,6 +54,17 @@ public class DeploymentDeck extends Deck {
     public boolean isAllowed(Card card) {
         if (super.isAllowed(card) && uniqueNames.isAllowed(card)) {
             Affiliation affiliation = ((DeploymentCard) card).getAffiliation();
+
+            if (card.getId() == IACP_BIB_FORTUNA) {
+                boolean hasRebels = false;
+                for (Card c : getCards()) {
+                    hasRebels |= ((DeploymentCard) c).getAffiliation() == Affiliation.REBEL;
+                }
+                if (hasRebels) {
+                    return false;
+                }
+            }
+
             return affiliation == getArmy().getFaction().getAffiliation() ||
                     affiliation == Affiliation.NEUTRAL ||
                     specialCards.isAllowed(card);

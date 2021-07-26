@@ -24,7 +24,7 @@ import java.util.Comparator;
 
 public class ArmyCollectionRecyclerView extends RecyclerView {
 
-    private static final ArmyNameComparer COMPARER = new ArmyNameComparer();
+    private static final ArmyNameComparator COMPARER = new ArmyNameComparator();
 
     private final SwipeToDeleteCallback callback;
     private Faction faction;
@@ -95,7 +95,7 @@ public class ArmyCollectionRecyclerView extends RecyclerView {
         diffResult.dispatchUpdatesTo(adapter);
     }
 
-    private static class ArmyNameComparer implements Comparator<Army> {
+    private static class ArmyNameComparator implements Comparator<Army> {
         @Override
         public int compare(Army army1, Army army2) {
             return army1.getName().compareTo(army2.getName());
