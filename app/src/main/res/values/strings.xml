@@ -482,5 +482,9 @@
         Version 2.3.8\n
         - Fixed a bug that did not allow to add command cards in an army.
     </string>
+    <string name="dialog_release_notes_version_49">
+        Version 2.3.9\n
+        - Fixed Dark Trooper Mk III deployment cost.
+    </string>
 
 </resources>
