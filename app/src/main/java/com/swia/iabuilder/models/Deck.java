@@ -30,7 +30,7 @@ public abstract class Deck {
         switch (card.getCardType()) {
             case DEPLOYMENT:
                 int cost = ((DeploymentCard) card).getDeploymentCost();
-                // TODO: Introduce a better handling of Modular and Quested abilities
+                // TODO: Introduce a better handling of Modular and Mudhorn Crest abilities
                 if (card.getId() == IACP_HEAVY_STOORMTROOPER_ELITE ||
                         card.getId() == IACP_THE_MANDALORIA_RISING_PHOENIX) {
                     cost -= 1;

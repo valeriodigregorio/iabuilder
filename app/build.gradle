@@ -6,8 +6,8 @@ android {
         applicationId "com.swia.iabuilder"
         minSdkVersion 23
         targetSdkVersion 31
-        versionCode 49
-        versionName "2.3.9"
+        versionCode 50
+        versionName "2.4.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
@@ -33,7 +33,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.google.zxing:core:3.4.1'
     implementation 'com.squareup.picasso:picasso:2.71828'
-    implementation 'com.swia.iavd:iavd-java:5.1.0'
+    implementation 'com.swia.iavd:iavd-java:6.1.0'
     implementation project(path: ':swia-dataset-cards')
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
