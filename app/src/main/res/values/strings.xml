@@ -488,7 +488,7 @@
     </string>
     <string name="dialog_release_notes_version_50">
         Version 2.4.0\n
-        - Update to IACP v6.1
+        - Update to IACP v6.1\n
         - Fixed integration with TabletopAdmiral and Vassal for all Season 6 cards.
     </string>
 
