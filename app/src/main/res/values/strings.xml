@@ -491,5 +491,10 @@
         - Update to IACP v6.1\n
         - Fixed integration with TabletopAdmiral and Vassal for all Season 6 cards.
     </string>
+    <string name="dialog_release_notes_version_51">
+        Version 2.4.1\n
+        - Update to IACP v6.3\n
+        - Fixed Biv Bodhrik's deployment card.
+    </string>
 
 </resources>
