@@ -15,6 +15,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -58,13 +62,12 @@ import java.io.InputStream;
 import java.util.Objects;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, ActivityResultCallback<ActivityResult> {
     private static final String TAG = SettingsManager.class.getName();
-
-    private static final int REQUEST_PICK_FILE = 1;
-
     private static final String API_PROFILE = "https://my-json-server.typicode.com/valeriodigregorio/iabuilder-rest/profile";
     private static final String API_DOWNLOAD = "https://drive.google.com/uc?export=download&confirm=Hawt&id=1Vq7h0-rLu1Z7jcZTVRADhkZNUtTyGB9p";
+
+    private ActivityResultLauncher<Intent> intentLauncher;
 
     private void initialize(Context context) {
         CardType.initialize(context);
@@ -177,6 +180,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        intentLauncher =  registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), this);
+
         File crashFile = new File(getExternalFilesDir(null), "crash_dump.log");
         Thread.setDefaultUncaughtExceptionHandler(new LogcatFileDump(crashFile));
 
@@ -272,7 +277,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 intent.setType("*/*");
-                startActivityForResult(intent, REQUEST_PICK_FILE);
+                intentLauncher.launch(intent);
                 return true;
             }
             case R.id.action_settings: {
@@ -286,10 +291,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == REQUEST_PICK_FILE) {
-            importArmyFromFile(data.getData());
+    public void onActivityResult(ActivityResult result) {
+        if (result.getResultCode() == RESULT_OK) {
+            Intent data = result.getData();
+            if (data != null) {
+                importArmyFromFile(data.getData());
+            }
         }
     }
 

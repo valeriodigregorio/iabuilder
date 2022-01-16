@@ -99,7 +99,7 @@ public class ArmyActivity extends AppCompatActivity implements View.OnClickListe
     private Intent getShareUrlIntent(Army army) {
         BaseArmyMarshaller<String, ?> marshaller = ArmyMarshallerType.TTA_EXTENDED.getMarshaller();
         String url = marshaller.serialize(army);
-        return ShareCompat.IntentBuilder.from(ArmyActivity.this)
+        return new ShareCompat.IntentBuilder(ArmyActivity.this)
                 .getIntent()
                 .putExtra(Intent.EXTRA_SUBJECT, army.getName())
                 .putExtra(Intent.EXTRA_TEXT, url)
@@ -107,7 +107,7 @@ public class ArmyActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private Intent getShareFileIntent(String text, Uri uri, String type) {
-        return ShareCompat.IntentBuilder.from(ArmyActivity.this)
+        return new ShareCompat.IntentBuilder(ArmyActivity.this)
                 .getIntent()
                 .putExtra(Intent.EXTRA_SUBJECT, text)
                 .putExtra(Intent.EXTRA_TEXT, text)
